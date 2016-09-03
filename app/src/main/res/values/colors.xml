@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- theme color-->
+    <color name="color_primary_gary">#e6e6e6</color>
+    <color name="color_primary_gary_dark">#D8D8D8</color>
+    <color name="color_primary">#3688fd</color>
+    <color name="color_primary_dark">#0065ff</color>
+    <color name="color_primary_press">#953688fd</color>
+    <color name="color_primary_accent">#3688fd</color>
+    <color name="color_green">#29E574</color>
+    <color name="color_green_press">#9029E574</color>
+    <color name="color_red">#F74D58</color>
+    <color name="color_red_press">#95F74D58</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_white">#ffffff</color>
+
+    <!-- text color  -->
+    <color name="color_text1">#323232</color>
+    <color name="color_text2">#5b595a</color>
+    <color name="color_text3">#969696</color>
+
+    <!-- other -->
+    <color name="color_home_head_view_bg">#414141</color>
+
+
+
+</resources>

@@ -1,0 +1,36 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="design_margin">16dp</dimen>
+
+    <!-- text size -->
+    <dimen name="micro_text_size">8sp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+    <dimen name="middle_text_size">12sp</dimen>
+    <dimen name="big_text_size">16sp</dimen>
+    <dimen name="bigger_text_size">18sp</dimen>
+    <dimen name="b_bigger_text_size">20sp</dimen>
+    <dimen name="bb_bigger_text_size">22sp</dimen>
+    <dimen name="bbb_bigger_text_size">24sp</dimen>
+    <dimen name="bbbb_bigger_text_size">26sp</dimen>
+
+    <!-- view size -->
+    <dimen name="view_padding_size">16dp</dimen>
+    <dimen name="half_design_view_size">5dp</dimen>
+    <dimen name="one_design_view_size">10dp</dimen>
+    <dimen name="one_and_a_half_design_view_size">15dp</dimen>
+    <dimen name="two_design_view_size">20dp</dimen>
+    <dimen name="three_design_view_size">30dp</dimen>
+    <dimen name="four_design_view_size">40dp</dimen>
+    <dimen name="five_design_view_size">50dp</dimen>
+    <dimen name="six_design_view_size">60dp</dimen>
+    <dimen name="sixty_five_design_view_size">65dp</dimen>
+    <dimen name="seven_design_view_size">70dp</dimen>
+    <dimen name="eight_design_view_size">80dp</dimen>
+    <dimen name="seventy_five_design_view_size">75dp</dimen>
+    <dimen name="one_hundred_design_view_size">100dp</dimen>
+    <dimen name="one_hundred_and_sixty_design_view_size">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/user_info_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_home_head_view_bg">
+
+        <com.lichen.teacher.view.CircleImageView
+            android:id="@+id/user_head_view"
+            android:layout_width="@dimen/seven_design_view_size"
+            android:layout_height="@dimen/seven_design_view_size"
+            android:layout_marginTop="@dimen/two_design_view_size"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginBottom="@dimen/two_design_view_size"
+            android:src="@drawable/user_default_head" />
+
+        <TextView
+            android:id="@+id/user_name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_design_view_size"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_toRightOf="@+id/user_head_view"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/big_text_size"
+            android:text="漫画南瓜"/>
+
+        <TextView
+            android:id="@+id/vip_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/half_design_view_size"
+            android:layout_below="@+id/user_name_view"
+            android:layout_alignLeft="@+id/user_name_view"
+            android:drawableLeft="@drawable/home_vip_icon"
+            android:textColor="@color/color_white"
+            android:text="VIP"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/half_design_view_size"
+            android:layout_below="@+id/vip_status_view"
+            android:layout_alignLeft="@+id/user_name_view"
+            android:drawableLeft="@drawable/home_not_authentication_icon"
+            android:textColor="@color/color_white"
+            android:text="未认证"/>
+
+        <Button
+            android:layout_width="@dimen/five_design_view_size"
+            android:layout_height="@dimen/three_design_view_size"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:layout_toLeftOf="@+id/arrow_view"
+            android:layout_centerVertical="true"
+            android:background="@drawable/hollow_red_btn_selector"
+            android:textColor="@drawable/hollow_red_btn_text_selector"
+            android:textSize="@dimen/middle_text_size"
+            android:text="去认证"/>
+
+        <ImageView
+            android:id="@+id/arrow_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/right_arrow_red"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/message_function_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="33.3%w"
+        app:layout_widthPercent="33.3%w"
+        android:layout_below="@+id/user_info_contain_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/message_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_message_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_below="@+id/message_icon_view"
+                android:text="@string/home_message"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/already_teaching_function_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="33.3%w"
+        app:layout_widthPercent="33.3%w"
+        android:layout_below="@+id/user_info_contain_view"
+        android:layout_toRightOf="@+id/message_function_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/already_teaching_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_already_teaching_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_below="@+id/already_teaching_icon_view"
+                android:text="@string/home_already_teaching"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/not_teaching_function_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="33.3%w"
+        app:layout_widthPercent="33.3%w"
+        android:layout_below="@+id/user_info_contain_view"
+        android:layout_toRightOf="@+id/already_teaching_function_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/not_teaching_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_not_teaching_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_below="@+id/not_teaching_icon_view"
+                android:text="@string/home_not_teaching"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/not_teaching_function_view"
+        android:background="@color/color_primary_gary_dark"/>
+
+    <RelativeLayout
+        android:id="@+id/live_request_function_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="33.3%w"
+        app:layout_widthPercent="33.3%w"
+        android:layout_below="@+id/message_function_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/live_request_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_live_request_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_below="@+id/live_request_icon_view"
+                android:text="@string/home_live_request"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/class_manage_function_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="33.3%w"
+        app:layout_widthPercent="33.3%w"
+        android:layout_below="@+id/message_function_view"
+        android:layout_toRightOf="@+id/live_request_function_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/class_manage_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_class_manage_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_below="@+id/class_manage_icon_view"
+                android:text="@string/home_class_manage"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_profit_function_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="33.3%w"
+        app:layout_widthPercent="33.3%w"
+        android:layout_below="@+id/message_function_view"
+        android:layout_toRightOf="@+id/class_manage_function_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/my_profit_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_my_profit_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_below="@+id/my_profit_icon_view"
+                android:text="@string/home_my_profit"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_profit_function_view"
+        android:background="@color/color_primary_gary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:layout_marginBottom="@dimen/one_design_view_size"
+            android:layout_centerHorizontal="true"
+            android:text="@string/home_click_down_student_app"/>
+
+    </RelativeLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

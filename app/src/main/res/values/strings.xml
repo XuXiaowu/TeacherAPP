@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">TeacherAPP</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+
+    <!-- 用户 -->
+    <string name="prompt_phone">请输入手机号</string>
+    <string name="prompt_identifying_code">请输入验证码</string>
+    <string name="get_identifying_code">获取验证码</string>
+    <string name="prompt_password">请输入密码</string>
+    <string name="login">登陆</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="now_register">立即注册</string>
+    <string name="user_register">用户注册</string>
+    <string name="user_teaching_time">累计教学时长(h)</string>
+    <string name="user_profit">累计收益(¥)</string>
+    <string name="user_my_is_teacher">我是班主任</string>
+    <string name="user_contact_custom_service">联系客服</string>
+    <string name="user_system_notification">系统通知</string>
+    <string name="user_student_app_download">学生版下载</string>
+    <string name="user_school_area">校区</string>
+    <string name="user_about">关于</string>
+    <string name="user_setting">设置</string>
+    <string name="setting_live_remind">直播提醒</string>
+    <string name="setting_clear_cache">清除缓存</string>
+    <string name="setting_feedback">意见反馈</string>
+    <string name="setting_recommend_to_friend">推荐给好友</string>
+    <string name="setting_check_update">检查更新</string>
+    <string name="setting_about">关于</string>
+
+    <!-- 首页 -->
+    <string name="home_message">审核消息</string>
+    <string name="home_already_teaching">已上课</string>
+    <string name="home_not_teaching">待上课</string>
+    <string name="home_live_request">直播申请</string>
+    <string name="home_class_manage">班级管理</string>
+    <string name="home_my_profit">我的收益</string>
+    <string name="home_click_down_student_app">点击下载理财教育学生版</string>
+
+
+    <!-- tab -->
+    <string name="dock_home">首页</string>
+    <string name="dock_community">社区</string>
+    <string name="dock_user">我的</string>
+    <string name="exit_application">再按一次退出程序</string>
+    <string name="sure">确定</string>
+
+</resources>

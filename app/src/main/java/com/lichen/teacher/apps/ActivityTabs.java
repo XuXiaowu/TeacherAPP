@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lichen.teacher.R;
+import com.lichen.teacher.apps.fragments.FragmentCommunity;
 import com.lichen.teacher.apps.fragments.FragmentHome;
 import com.lichen.teacher.apps.fragments.FragmentUser;
 import com.lichen.teacher.util.ShowUtils;
@@ -242,7 +243,7 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
 
         //new vision
         mFragmentList.add(new FragmentHome());
-        mFragmentList.add(new FragmentUser());
+        mFragmentList.add(new FragmentCommunity());
         mFragmentList.add(new FragmentUser());
         mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         mViewPager.setCurrentItem(0);

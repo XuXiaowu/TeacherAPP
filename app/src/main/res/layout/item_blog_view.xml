@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground">
+
+    <com.lichen.teacher.view.CircleImageView
+        android:id="@+id/cover_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        app:border_width="0dp"
+        app:border_color="@color/color_primary_gary"
+        android:src="@mipmap/test_miku"/>
+
+    <LinearLayout
+        android:id="@+id/blog_content_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cover_view"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/subject_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="content"
+            android:textColor="@color/color_primary"/>
+
+        <TextView
+            android:id="@+id/tiem_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/small_text_size"
+            android:layout_marginTop="@dimen/half_design_view_size"
+            android:text="7月23日 10:30"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/cover_view"
+        android:text="contencontentcontentccontencontentcontentcontentcontentcontentcontenttontentcontentcontentcontentt"/>
+
+    <cn.bingoogolapple.photopicker.widget.BGANinePhotoLayout
+        android:id="@+id/photos_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/content_view"/>
+
+    <View
+        android:id="@+id/cut_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_primary_gary_dark"
+        android:layout_below="@id/photos_view"/>
+
+    <LinearLayout
+        android:id="@+id/interactive_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cut_line">
+
+        <LinearLayout
+            android:id="@+id/share_layout_view"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_primary_gary_dark"
+            android:layout_marginTop="@dimen/half_design_view_size"
+            android:layout_marginBottom="@dimen/half_design_view_size" />
+
+        <LinearLayout
+            android:id="@+id/comment_layout_view"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_primary_gary_dark"
+            android:layout_marginTop="@dimen/half_design_view_size"
+            android:layout_marginBottom="@dimen/half_design_view_size" />
+
+        <LinearLayout
+            android:id="@+id/like_layout_view"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/like_status_view"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/color_primary_gary"
+        android:layout_below="@+id/interactive_layout"/>
+
+</RelativeLayout>

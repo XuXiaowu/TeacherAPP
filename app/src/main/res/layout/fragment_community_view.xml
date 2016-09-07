@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/test_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTint="@color/color_red"
+        android:shadowColor="@color/color_primary"
+        android:text="test"
+        android:visibility="visible"/>
+
+    <com.cundong.recyclerview.LRecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+    </com.cundong.recyclerview.LRecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/status_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/status_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/loading_data_error_try_again_text"
+            android:visibility="gone"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <LinearLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/one_design_view_size"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:gravity="center"
+                android:text="@string/loading_text" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

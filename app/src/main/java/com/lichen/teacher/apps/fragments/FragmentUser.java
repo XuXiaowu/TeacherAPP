@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 
 import com.lichen.teacher.R;
 import com.lichen.teacher.apps.ActivitySetting;
+import com.lichen.teacher.apps.ActivityUserEdit;
+import com.lichen.teacher.view.CircleImageView;
 
 /**
  * Created by Administrator on 2016/9/2.
@@ -19,6 +21,7 @@ public class FragmentUser extends Fragment {
 
     private View mContentView;
     private RelativeLayout mSettingView;
+    private CircleImageView mUserHeadView;
 
     @Nullable
     @Override
@@ -59,12 +62,22 @@ public class FragmentUser extends Fragment {
         }
     };
 
+    private View.OnClickListener mUserHeadClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(), ActivityUserEdit.class);
+            startActivity(intent);
+        }
+    };
+
     private void initView(){
         mSettingView = (RelativeLayout) mContentView.findViewById(R.id.setting_view);
+        mUserHeadView = (CircleImageView) mContentView.findViewById(R.id.user_head_view);
     }
 
     private void setViewClickListener() {
         mSettingView.setOnClickListener(mFunctionViewClickListener);
+        mUserHeadView.setOnClickListener(mUserHeadClickListener);
     }
 
 

@@ -18,6 +18,7 @@
     <color name="color_text1">#323232</color>
     <color name="color_text2">#5b595a</color>
     <color name="color_text3">#969696</color>
+    <color name="color_text4">#C6C6C6</color>
 
     <!-- other -->
     <color name="color_home_head_view_bg">#414141</color>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lichen.teacher.apps.ActivityAuthentication"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_primary">
+
+            <ImageView
+                android:id="@+id/back_view"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:src="@drawable/left_arrow_white"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/user_setting"
+                android:textSize="@dimen/bigger_text_size"
+                android:textColor="@color/color_white"/>
+
+            <TextView
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="@string/auth_submit"
+                android:textSize="@dimen/middle_text_size"
+                android:textColor="@color/color_white"
+                android:background="?android:attr/selectableItemBackground"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <View
+        android:id="@+id/cut_line_one_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_design_view_size"
+        android:layout_below="@+id/wifi_view"
+        android:background="@color/color_primary_gary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/name_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/sex_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_sex"/>
+
+        <RadioButton
+            android:id="@+id/sex_man_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toLeftOf="@+id/sex_woman_radio_btn"
+            android:layout_centerVertical="true"
+            android:text="@string/auth_sex_man"/>
+
+        <RadioButton
+            android:id="@+id/sex_woman_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/auth_sex_woman"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/teach_seniority_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_teach_seniority"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/teach_seniority_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/id_number_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_id_number"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/id_number_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_design_view_size"
+        android:layout_below="@+id/wifi_view"
+        android:background="@color/color_primary_gary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/phone_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_phone"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/phone_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/email_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_email"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/email_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_design_view_size"
+        android:layout_below="@+id/wifi_view"
+        android:background="@color/color_primary_gary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/longevity_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_longevity"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/longevity_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/education_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_education"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/education_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/major_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_major"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/major_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_below="@+id/check_update_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/school_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="@string/auth_school"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/two_design_view_size"
+            android:layout_marginRight="@dimen/two_design_view_size"
+            android:layout_toRightOf="@+id/school_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_primary_gary_dark"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

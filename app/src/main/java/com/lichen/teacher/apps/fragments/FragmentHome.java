@@ -1,5 +1,6 @@
 package com.lichen.teacher.apps.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -20,6 +22,8 @@ import com.cundong.recyclerview.LRecyclerView;
 import com.cundong.recyclerview.util.RecyclerViewUtils;
 import com.lichen.teacher.R;
 import com.lichen.teacher.adapter.HomeAdapter;
+import com.lichen.teacher.apps.ActivityAuthentication;
+import com.lichen.teacher.apps.ActivityExamView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +43,7 @@ public class FragmentHome extends Fragment {
     private RelativeLayout mClassManageView;
     private RelativeLayout mMyProfitView;
     private ImageView mUserHeadView;
+    private Button mAuthBtn;
 
     private HomeAdapter mHomeAdapter;
     private HeaderAndFooterRecyclerViewAdapter mHeaderAndFooterRecyclerViewAdapter;
@@ -78,7 +83,16 @@ public class FragmentHome extends Fragment {
     private View.OnClickListener mFunctionViewClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            Intent intent = new Intent(getActivity(), ActivityExamView.class);
+            startActivity(intent);
+        }
+    };
 
+    private View.OnClickListener mAuthBtnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(), ActivityAuthentication.class);
+            startActivity(intent);
         }
     };
 
@@ -93,6 +107,7 @@ public class FragmentHome extends Fragment {
         mClassManageView = (RelativeLayout) mHeadView.findViewById(R.id.class_manage_function_view);
         mMyProfitView = (RelativeLayout) mHeadView.findViewById(R.id.my_profit_function_view);
         mUserHeadView = (ImageView) mHeadView.findViewById(R.id.user_head_view);
+        mAuthBtn = (Button) mHeadView.findViewById(R.id.authentication_btn);
     }
 
     private void setViewClickListener() {
@@ -102,6 +117,7 @@ public class FragmentHome extends Fragment {
         mLiveRequestView.setOnClickListener(mFunctionViewClickListener);
         mClassManageView.setOnClickListener(mFunctionViewClickListener);
         mMyProfitView.setOnClickListener(mFunctionViewClickListener);
+        mAuthBtn.setOnClickListener(mAuthBtnClickListener);
     }
 
     private void setupListView() {
@@ -126,6 +142,12 @@ public class FragmentHome extends Fragment {
                 .placeholder(R.drawable.user_default_head)
                 .listener(mRequestListener)
                 .into(mUserHeadView);
+        mUserHeadView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private RequestListener mRequestListener = new RequestListener() {

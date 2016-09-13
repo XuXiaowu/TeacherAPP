@@ -17,7 +17,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/color_primary">
 
-                <ImageView
+                <com.lichen.teacher.view.CircleImageView
                     android:id="@+id/user_head_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

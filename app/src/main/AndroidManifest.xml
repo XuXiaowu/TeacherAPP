@@ -39,7 +39,11 @@
 
         <activity android:name=".apps.ActivityUserRegister" />
         <activity android:name=".apps.ActivityTabs" />
-        <activity android:name=".apps.ActivitySetting"></activity>
+        <activity android:name=".apps.ActivitySetting" />
+        <activity android:name=".apps.ActivityWriteBlog" />
+        <activity android:name=".apps.ActivityExamView" />
+        <activity android:name=".apps.ActivityAuthentication" />
+        <activity android:name=".apps.ActivityUserEdit"></activity>
     </application>
 
 </manifest>

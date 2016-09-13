@@ -82,6 +82,36 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/dock_live_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/dock_live_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dock_live_selector"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/dock_live_title_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="@dimen/half_design_view_size"
+                android:text="@string/dock_live"
+                android:textColor="@color/color_text3"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
             android:id="@+id/dock_user_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

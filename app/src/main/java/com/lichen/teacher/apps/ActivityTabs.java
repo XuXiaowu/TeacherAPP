@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.lichen.teacher.R;
 import com.lichen.teacher.apps.fragments.FragmentCommunity;
 import com.lichen.teacher.apps.fragments.FragmentHome;
+import com.lichen.teacher.apps.fragments.FragmentLive;
 import com.lichen.teacher.apps.fragments.FragmentUser;
 import com.lichen.teacher.util.ShowUtils;
 import com.lichen.teacher.view.NoScrollViewPager;
@@ -42,15 +43,17 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
     private NoScrollViewPager mViewPager;
     private TextView mDockTitleHomeView;
     private TextView mDockTitleCommunityView;
+    private TextView mDockTitleLiveView;
     private TextView mDockTitleUserView;
 
-    //首页底部的导航五个按钮依序,首页,课程分类,行业资讯,考试系统,我
     private ImageView mDockIconHomeView;
     private ImageView mDockIconCommunityView;
+    private ImageView mDockIconLiveView;
     private ImageView mDockIconUserView;
 
     private LinearLayout mDockHomeView;
     private LinearLayout mDockCommunityView;
+    private LinearLayout mDockLiveView;
     private LinearLayout mDockUserView;
 
     private List<Fragment> mFragmentList = new ArrayList();
@@ -90,11 +93,14 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
             case R.id.dock_community_view:
                 mViewPager.setCurrentItem(1);
                 selectDockView(1);
-//                ShowUtils.showMsg(ActivityTabs.this, "即将上线");
                 break;
-            case R.id.dock_user_view:
+            case R.id.dock_live_view:
                 mViewPager.setCurrentItem(2);
                 selectDockView(2);
+                break;
+            case R.id.dock_user_view:
+                mViewPager.setCurrentItem(3);
+                selectDockView(3);
                 break;
             default:
                 break;
@@ -204,17 +210,20 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
     private void initView() {
         mDockIconHomeView = (ImageView) findViewById(R.id.dock_home_icon_view);
         mDockIconCommunityView = (ImageView) findViewById(R.id.dock_community_icon_view);
+        mDockIconLiveView = (ImageView) findViewById(R.id.dock_live_icon_view);
         mDockIconUserView = (ImageView) findViewById(R.id.dock_user_icon_view);
 
         mDockHomeView = (LinearLayout) findViewById(R.id.dock_home_view);
         mDockHomeView.setSelected(true);
         mDockCommunityView = (LinearLayout) findViewById(R.id.dock_community_view);
+        mDockLiveView = (LinearLayout) findViewById(R.id.dock_live_view);
         mDockUserView = (LinearLayout) findViewById(R.id.dock_user_view);
 
         mDockTitleHomeView = (TextView) findViewById(R.id.dock_home_title_view);
-        mDockTitleCommunityView = (TextView) findViewById(R.id.dock_community_title_view);
-        mDockTitleUserView = (TextView) findViewById(R.id.dock_user_title_view);
         mDockTitleHomeView.setTextColor(getResources().getColor(R.color.color_primary));
+        mDockTitleCommunityView = (TextView) findViewById(R.id.dock_community_title_view);
+        mDockTitleLiveView = (TextView) findViewById(R.id.dock_live_title_view);
+        mDockTitleUserView = (TextView) findViewById(R.id.dock_user_title_view);
 
         mViewPager = (NoScrollViewPager) findViewById(R.id.view_page);
     }
@@ -222,15 +231,19 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
     private void addRbViewList() {
         mDockIconViews.add(mDockIconHomeView);
         mDockIconViews.add(mDockIconCommunityView);
+        mDockIconViews.add(mDockIconLiveView);
         mDockIconViews.add(mDockIconUserView);
+
         mDockTitleViews.add(mDockTitleHomeView);
         mDockTitleViews.add(mDockTitleCommunityView);
+        mDockTitleViews.add(mDockTitleLiveView);
         mDockTitleViews.add(mDockTitleUserView);
     }
 
     private void addListener() {
         mDockHomeView.setOnClickListener(this);
         mDockCommunityView.setOnClickListener(this);
+        mDockLiveView.setOnClickListener(this);
         mDockUserView.setOnClickListener(this);
     }
 
@@ -244,6 +257,7 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
         //new vision
         mFragmentList.add(new FragmentHome());
         mFragmentList.add(new FragmentCommunity());
+        mFragmentList.add(new FragmentLive());
         mFragmentList.add(new FragmentUser());
         mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         mViewPager.setCurrentItem(0);

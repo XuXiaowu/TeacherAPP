@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="user_edit_sex_menu_item">
+        <item>@string/auth_sex_man</item>
+        <item>@string/auth_sex_woman</item>
+    </array>
+</resources>

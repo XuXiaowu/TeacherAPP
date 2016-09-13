@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lichen.teacher.apps.ActivityWriteBlog">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size">
+
+        <RelativeLayout
+            android:id="@+id/title_bar_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_primary">
+
+            <ImageView
+                android:id="@+id/back_view"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:src="@drawable/left_arrow_white"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="发表文章"
+                android:textSize="@dimen/bigger_text_size"
+                android:textColor="@color/color_white"/>
+
+            <TextView
+                android:id="@+id/send_view"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="发表"
+                android:textSize="@dimen/none_text_size"
+                android:textColor="@color/color_white"
+                android:background="?android:attr/selectableItemBackground"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <EditText
+        android:id="@+id/content_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/app_bar"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="这一刻的想法..."
+        android:lines="4"
+        android:textColor="@color/color_text1"
+        android:textColorHint="@color/color_text4" />
+
+    <cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout
+        android:id="@+id/add_photos_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content_et"
+        android:layout_margin="@dimen/one_design_view_size" />
+
+</RelativeLayout>

@@ -27,6 +27,13 @@
     <string name="user_school_area">校区</string>
     <string name="user_about">关于</string>
     <string name="user_setting">设置</string>
+    <string name="user_edit_title">修改资料</string>
+    <string name="user_edit_save">保存</string>
+    <string name="user_edit_head">头像</string>
+    <string name="user_edit_nick_name">昵称</string>
+    <string name="user_edit_sex">性别</string>
+    <string name="user_edit_change_password">修改密码</string>
+    <string name="user_edit_signature">个性签名</string>
     <string name="setting_live_remind">直播提醒</string>
     <string name="setting_clear_cache">清除缓存</string>
     <string name="setting_feedback">意见反馈</string>
@@ -43,12 +50,28 @@
     <string name="home_my_profit">我的收益</string>
     <string name="home_click_down_student_app">点击下载理财教育学生版</string>
 
-
     <!-- tab -->
     <string name="dock_home">首页</string>
     <string name="dock_community">社区</string>
+    <string name="dock_live">直播</string>
     <string name="dock_user">我的</string>
     <string name="exit_application">再按一次退出程序</string>
     <string name="sure">确定</string>
+
+    <!-- 认证资料 -->
+    <string name="auth_name">姓名</string>
+    <string name="auth_sex">性别</string>
+    <string name="auth_teach_seniority">教龄</string>
+    <string name="auth_sex_man">男</string>
+    <string name="auth_sex_woman">女</string>
+    <string name="auth_age">年龄</string>
+    <string name="auth_id_number">身份证号码</string>
+    <string name="auth_phone">电话</string>
+    <string name="auth_email">邮箱</string>
+    <string name="auth_longevity">任职资历</string>
+    <string name="auth_education">最高学历</string>
+    <string name="auth_major">专业</string>
+    <string name="auth_school">院校</string>
+    <string name="auth_submit">提交</string>
 
 </resources>

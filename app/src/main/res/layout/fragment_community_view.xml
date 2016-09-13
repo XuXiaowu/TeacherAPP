@@ -4,15 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/test_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTint="@color/color_red"
-        android:shadowColor="@color/color_primary"
-        android:text="test"
-        android:visibility="visible"/>
-
     <com.cundong.recyclerview.LRecyclerView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
@@ -61,5 +52,15 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/two_design_view_size"
+        android:layout_marginBottom="@dimen/two_design_view_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_input_add"/>
 
 </RelativeLayout>

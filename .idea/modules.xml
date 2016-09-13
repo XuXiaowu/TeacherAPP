@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BGAPhotoPicker/BGAPhotoPicker.iml" filepath="$PROJECT_DIR$/BGAPhotoPicker/BGAPhotoPicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/TeacherAPP.iml" filepath="$PROJECT_DIR$/TeacherAPP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/webdataloader/webdataloader.iml" filepath="$PROJECT_DIR$/webdataloader/webdataloader.iml" />

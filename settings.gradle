@@ -1,1 +1,1 @@
-include ':app', ':webdataloader'
+include ':app', ':webdataloader', ':BGAPhotoPicker'

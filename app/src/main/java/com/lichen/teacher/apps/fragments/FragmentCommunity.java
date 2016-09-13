@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -18,12 +19,15 @@ import com.cundong.recyclerview.HeaderAndFooterRecyclerViewAdapter;
 import com.cundong.recyclerview.LRecyclerView;
 import com.lichen.teacher.R;
 import com.lichen.teacher.adapter.BlogAdapter;
+import com.lichen.teacher.apps.ActivityWriteBlog;
 import com.lichen.teacher.global.WebServiceConfigure;
 import com.lichen.teacher.http.HttpService;
 import com.lichen.teacher.models.BlogListResult;
+import com.lichen.teacher.view.TouchableImageView;
 
 import java.io.File;
 import java.util.List;
+
 
 import cn.bingoogolapple.photopicker.activity.BGAPhotoPickerActivity;
 import cn.bingoogolapple.photopicker.activity.BGAPhotoPreviewActivity;
@@ -37,9 +41,9 @@ public class FragmentCommunity extends Fragment {
 
     private View mContentView;
     private LRecyclerView mListView;
-    private Button mTestBtn;
     private TextView mLoadingStatusView;
     private LinearLayout mLoadingView;
+    private FloatingActionButton mAddBtn;
 
     private BlogAdapter mBlogAdapter;
 
@@ -88,23 +92,21 @@ public class FragmentCommunity extends Fragment {
         }
     };
 
-    private View.OnClickListener mTestBtnClickListener = new View.OnClickListener() {
+    private View.OnClickListener mAddBtnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Button button = (Button) v;
-//            button.getDr
-            Intent intent = BGAPhotoPickerActivity.newIntent(getActivity(), null, 9, null);
-//            BGAPhotoPreviewActivity.newIntent()
+//            Intent intent = BGAPhotoPickerActivity.newIntent(getActivity(), null, 9, null);
+            Intent intent = new Intent(getActivity(), ActivityWriteBlog.class);
             startActivity(intent);
         }
     };
 
     private void initView() {
-        mTestBtn = (Button) mContentView.findViewById(R.id.test_btn);
-        mTestBtn.setOnClickListener(mTestBtnClickListener);
         mListView = (LRecyclerView) mContentView.findViewById(R.id.list_view);
         mLoadingStatusView = (TextView) mContentView.findViewById(R.id.status_view);
         mLoadingView = (LinearLayout) mContentView.findViewById(R.id.loading_view);
+        mAddBtn = (FloatingActionButton) mContentView.findViewById(R.id.add_btn);
+        mAddBtn.setOnClickListener(mAddBtnClickListener);
     }
 
     private void setupListView() {
@@ -114,6 +116,7 @@ public class FragmentCommunity extends Fragment {
         HeaderAndFooterRecyclerViewAdapter hafrva = new HeaderAndFooterRecyclerViewAdapter(getActivity(), mBlogAdapter);
         mListView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mListView.setAdapter(hafrva);
+        mListView.setPullRefreshEnabled(false);
     }
 
     private void getData() {

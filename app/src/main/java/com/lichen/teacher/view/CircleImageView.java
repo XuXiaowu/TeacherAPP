@@ -46,6 +46,8 @@ public class CircleImageView extends ImageView {
     private final Paint mBitmapPaint = new Paint();
     //这个描边，则与本身的原图bitmap没有任何关联，
     private final Paint mBorderPaint = new Paint();
+    //按下显示的遮罩层
+    private final Paint mPressedPaint = new Paint();
     //这里定义了 圆形边缘的默认宽度和颜色
     private int mBorderColor = DEFAULT_BORDER_COLOR;
     private int mBorderWidth = DEFAULT_BORDER_WIDTH;
@@ -138,6 +140,10 @@ public class CircleImageView extends ImageView {
         //如果圆形边缘的宽度不为0 我们还要绘制带边界的外圆形 边界画笔为mBorderPaint
         if (mBorderWidth != 0) {
             canvas.drawCircle(getWidth() / 2, getHeight() / 2, mBorderRadius, mBorderPaint);
+        }
+
+        if (isPressed()) {
+            canvas.drawCircle(getWidth() / 2, getHeight() / 2, getWidth() / 2, mPressedPaint);
         }
     }
 
@@ -236,6 +242,13 @@ public class CircleImageView extends ImageView {
         mBitmapPaint.setColorFilter(mColorFilter);
         invalidate();
     }
+
+    @Override
+    protected void dispatchSetPressed(boolean pressed) {
+        super.dispatchSetPressed(pressed);
+        invalidate();
+    }
+
     /**
      * Drawable转Bitmap
      * @param drawable
@@ -295,6 +308,8 @@ public class CircleImageView extends ImageView {
         mBorderPaint.setAntiAlias(true);
         mBorderPaint.setColor(mBorderColor);    //画笔颜色
         mBorderPaint.setStrokeWidth(mBorderWidth);//画笔边界宽度
+        mPressedPaint.setAntiAlias(true); //设置遮罩层画笔
+        mPressedPaint.setColor(0x33000000);
         //这个地方是取的原图片的宽高
         mBitmapHeight = mBitmap.getHeight();
         mBitmapWidth = mBitmap.getWidth();

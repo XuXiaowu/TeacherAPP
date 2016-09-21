@@ -34,6 +34,7 @@ public class ActivityUserEdit extends AppCompatActivity {
     private ImageView mBackView;
     private RelativeLayout mUserHeadContainView;
     private RelativeLayout mSexContainView;
+    private RelativeLayout mChangePassworView;
     private CircleImageView mUserHeadView;
     private TextView mSexView;
 
@@ -85,6 +86,15 @@ public class ActivityUserEdit extends AppCompatActivity {
         }
     };
 
+    private View.OnClickListener mChangePasswordViewClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClass(ActivityUserEdit.this, ActivityChangePassword.class);
+            startActivity(intent);
+        }
+    };
+
 
     private RequestListener mRequestListener = new RequestListener() {
         @Override
@@ -103,6 +113,7 @@ public class ActivityUserEdit extends AppCompatActivity {
         mBackView = (ImageView) findViewById(R.id.back_view);
         mUserHeadContainView = (RelativeLayout) findViewById(R.id.head_contain_view);
         mSexContainView = (RelativeLayout) findViewById(R.id.sex_contain_view);
+        mChangePassworView = (RelativeLayout) findViewById(R.id.change_password_contain_view);
         mUserHeadView = (CircleImageView) findViewById(R.id.user_head_view);
         mSexView = (TextView) findViewById(R.id.sex_view);
     }
@@ -110,5 +121,6 @@ public class ActivityUserEdit extends AppCompatActivity {
     private void setViewClickListener() {
         mUserHeadContainView.setOnClickListener(mUserHeadViewClickListener);
         mSexContainView.setOnClickListener(mSexContainViewClickListener);
+        mChangePassworView.setOnClickListener(mChangePasswordViewClickListener);
     }
 }

@@ -28,4 +28,5 @@ dependencies {
 //    compile 'cn.bingoogolapple:bga-adapter:1.1.0@aar'
     compile project(':webdataloader')
     compile project(':BGAPhotoPicker')
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

@@ -2,7 +2,8 @@
     <string name="app_name">TeacherAPP</string>
     <string name="title_activity_login">Sign in</string>
 
-    <!-- Strings related to login -->
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
 
     <!-- 加载状态 -->
     <string name="loading_text">数据加载中...</string>
@@ -14,6 +15,7 @@
     <string name="prompt_identifying_code">请输入验证码</string>
     <string name="get_identifying_code">获取验证码</string>
     <string name="prompt_password">请输入密码</string>
+    <string name="prompt_confirm_password">确认密码</string>
     <string name="login">登陆</string>
     <string name="forget_password">忘记密码?</string>
     <string name="now_register">立即注册</string>
@@ -34,6 +36,7 @@
     <string name="user_edit_sex">性别</string>
     <string name="user_edit_change_password">修改密码</string>
     <string name="user_edit_signature">个性签名</string>
+    <string name="user_edit_complete">完成</string>
     <string name="setting_live_remind">直播提醒</string>
     <string name="setting_clear_cache">清除缓存</string>
     <string name="setting_feedback">意见反馈</string>
@@ -73,5 +76,24 @@
     <string name="auth_major">专业</string>
     <string name="auth_school">院校</string>
     <string name="auth_submit">提交</string>
+
+    <!-- 直播申请 -->
+    <string name="live_request_create">创建</string>
+    <string name="live_request_title_hint">中文最多15个字</string>
+    <string name="live_request_title">标题</string>
+    <string name="live_request_type">类型</string>
+    <string name="live_request_date">时间</string>
+    <string name="live_request_select_date">选择日期</string>
+    <string name="live_request_price">价格</string>
+    <string name="live_request_price_hint">元</string>
+    <string name="live_request_summary">简介</string>
+    <string name="live_request_summary_hint">课程介绍、大纲、课程安排</string>
+    <string name="live_request_image">课程图片</string>
+    <string name="live_request_date_error_hint">直播开始时间不能晚于结束时间</string>
+
+    <!-- 我的收益 -->
+    <string name="my_profit_title">我的收益</string>
+    <string name="my_profit_withdrawals">提现</string>
+
 
 </resources>

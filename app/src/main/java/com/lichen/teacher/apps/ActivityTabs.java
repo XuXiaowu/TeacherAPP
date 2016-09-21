@@ -26,6 +26,8 @@ import com.lichen.teacher.apps.fragments.FragmentLive;
 import com.lichen.teacher.apps.fragments.FragmentUser;
 import com.lichen.teacher.util.ShowUtils;
 import com.lichen.teacher.view.NoScrollViewPager;
+import com.umeng.analytics.MobclickAgent;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,11 +78,13 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
+        MobclickAgent.onResume(this);
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override

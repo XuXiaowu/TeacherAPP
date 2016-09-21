@@ -24,6 +24,7 @@ import com.lichen.teacher.R;
 import com.lichen.teacher.adapter.HomeAdapter;
 import com.lichen.teacher.apps.ActivityAuthentication;
 import com.lichen.teacher.apps.ActivityExamView;
+import com.lichen.teacher.apps.ActivityLiveRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,8 +84,15 @@ public class FragmentHome extends Fragment {
     private View.OnClickListener mFunctionViewClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), ActivityExamView.class);
-            startActivity(intent);
+            switch (v.getId()) {
+                case R.id.live_request_function_view:
+                    Intent intent = new Intent();
+                    intent.setClass(getActivity(), ActivityLiveRequest.class);
+                    startActivity(intent);
+                    break;
+            }
+//            Intent intent = new Intent(getActivity(), ActivityExamView.class);
+//            startActivity(intent);
         }
     };
 

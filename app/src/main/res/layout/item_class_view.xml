@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/cover_view"
+            android:layout_width="@dimen/eight_design_view_size"
+            android:layout_height="@dimen/eight_design_view_size"
+            android:layout_margin="@dimen/one_design_view_size"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test_miku"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:textSize="@dimen/big_text_size"
+                android:textColor="@color/color_text1"
+                android:text="title"/>
+
+            <ImageView
+                android:id="@+id/member_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/member"/>
+
+            <TextView
+                android:id="@+id/num_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_design_view_size"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/member_view"
+                android:text="23"/>
+
+            <TextView
+                android:id="@+id/introduction_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:layout_marginRight="@dimen/one_design_view_size"
+                android:layout_below="@id/num_view"
+                android:singleLine="true"
+                android:text="contentcontentcontentcontentcontentcontent"/>
+            
+            <View
+                android:id="@+id/vertical_line_view"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:layout_marginRight="@dimen/one_design_view_size"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/num_view"
+                android:background="@color/color_text1"/>
+
+            <TextView
+                android:id="@+id/teacher_view"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/vertical_line_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="班主任:方志祥"/>
+
+            <Button
+                android:id="@+id/add_view"
+                android:layout_width="@dimen/six_design_view_size"
+                android:layout_height="@dimen/three_design_view_size"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/two_design_view_size"
+                android:paddingLeft="@dimen/one_design_view_size"
+                android:paddingRight="@dimen/one_design_view_size"
+                android:text="毕业"
+                android:textColor="@drawable/hollow_red_btn_text_selector"
+                android:background="@drawable/hollow_red_btn_selector"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_primary_gary"/>
+
+</LinearLayout>

@@ -14,6 +14,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.lichen.teacher.R;
 
+/**
+ * update by xiaowu on 2016/8/20.
+ */
 public class ActivityUserLogin extends AppCompatActivity {
 
     private EditText mEditUserIdView;

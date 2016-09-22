@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TeacherAPP</string>
+    <string name="app_name">理臣教育教师版</string>
     <string name="title_activity_login">Sign in</string>
 
     <string name="confirm">确定</string>
@@ -62,6 +62,7 @@
     <string name="sure">确定</string>
 
     <!-- 认证资料 -->
+    <string name="auth_title">认证资料</string>
     <string name="auth_name">姓名</string>
     <string name="auth_sex">性别</string>
     <string name="auth_teach_seniority">教龄</string>
@@ -94,6 +95,27 @@
     <!-- 我的收益 -->
     <string name="my_profit_title">我的收益</string>
     <string name="my_profit_withdrawals">提现</string>
+    <string name="my_profit_history_bill">历史账单</string>
+
+    <!-- 审核消息 -->
+    <string name="auditing_message">审核消息</string>
+
+    <!-- 我的班级 -->
+    <string name="my_class_title">我的班级</string>
+
+    <!-- 创建班级 -->
+    <string name="create_class_title">创建班级</string>
+    <string name="create_class_name">名称</string>
+    <string name="create_class_type">类型</string>
+    <string name="create_class_summary">简介</string>
+    <string name="create_class_summary_hint">班级性质</string>
+    <string name="create_class_image">班级图片</string>
+
+    <!-- 已上课 -->
+    <string name="live_already_play_title">已上课</string>
+
+    <!-- 待上课 -->
+    <string name="live_wait_play_title">待上课</string>
 
 
 </resources>

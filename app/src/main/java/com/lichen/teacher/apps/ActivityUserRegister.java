@@ -9,6 +9,9 @@ import android.widget.ImageView;
 
 import com.lichen.teacher.R;
 
+/**
+ * update by xiaowu on 2016/8/20.
+ */
 public class ActivityUserRegister extends AppCompatActivity {
 
     private ImageView mBackView;

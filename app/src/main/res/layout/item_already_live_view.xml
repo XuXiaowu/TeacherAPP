@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.lichen.teacher.view.TouchableImageView
+        android:id="@+id/cover_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="55%w"
+        android:scaleType="fitXY"
+        android:src="@drawable/testtesttesttesttesttesttesttesttest"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:paddingTop="@dimen/half_design_view_size"
+        android:paddingBottom="@dimen/half_design_view_size"
+        android:paddingLeft="@dimen/one_design_view_size"
+        android:paddingRight="@dimen/one_design_view_size"
+        android:background="@drawable/live_cover_title_bg"
+        android:textColor="@color/color_green"
+        android:text="今天20:30开播"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_design_view_size"
+        android:layout_below="@+id/cover_view">
+
+        <TextView
+            android:id="@+id/user_name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_padding_size"
+            android:layout_toRightOf="@+id/user_cover_view"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="会计从业证书"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/cut_line_view"
+            android:textColor="@color/color_primary"
+            android:layout_centerVertical="true"
+            android:text="888人购买"/>
+
+        <View
+            android:id="@+id/cut_line_view"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/one_design_view_size"
+            android:layout_marginLeft="@dimen/half_design_view_size"
+            android:layout_marginRight="@dimen/half_design_view_size"
+            android:layout_toLeftOf="@+id/price_view"
+            android:layout_centerVertical="true"
+            android:background="@color/color_text1"/>
+
+        <TextView
+            android:id="@+id/price_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_text1"
+            android:text="¥88.0"/>
+
+    </RelativeLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

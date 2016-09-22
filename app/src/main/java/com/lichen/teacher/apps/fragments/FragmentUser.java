@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.lichen.teacher.R;
+import com.lichen.teacher.apps.ActivitySchoolArea;
 import com.lichen.teacher.apps.ActivitySetting;
 import com.lichen.teacher.apps.ActivityUserEdit;
 import com.lichen.teacher.view.CircleImageView;
@@ -20,6 +21,7 @@ import com.lichen.teacher.view.CircleImageView;
 public class FragmentUser extends Fragment {
 
     private View mContentView;
+    private RelativeLayout mSchoolAreaView;
     private RelativeLayout mSettingView;
     private CircleImageView mUserHeadView;
 
@@ -52,10 +54,16 @@ public class FragmentUser extends Fragment {
     private View.OnClickListener mFunctionViewClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            Intent intent;
             switch (v.getId()) {
                 case R.id.setting_view:
-                    Intent intent = new Intent();
+                    intent = new Intent();
                     intent.setClass(getActivity(), ActivitySetting.class);
+                    startActivity(intent);
+                    break;
+                case R.id.school_area_view:
+                    intent = new Intent();
+                    intent.setClass(getActivity(), ActivitySchoolArea.class);
                     startActivity(intent);
                     break;
             }
@@ -71,11 +79,13 @@ public class FragmentUser extends Fragment {
     };
 
     private void initView(){
+        mSchoolAreaView = (RelativeLayout) mContentView.findViewById(R.id.school_area_view);
         mSettingView = (RelativeLayout) mContentView.findViewById(R.id.setting_view);
         mUserHeadView = (CircleImageView) mContentView.findViewById(R.id.user_head_view);
     }
 
     private void setViewClickListener() {
+        mSchoolAreaView.setOnClickListener(mFunctionViewClickListener);
         mSettingView.setOnClickListener(mFunctionViewClickListener);
         mUserHeadView.setOnClickListener(mUserHeadClickListener);
     }

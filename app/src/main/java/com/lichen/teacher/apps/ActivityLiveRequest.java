@@ -25,6 +25,9 @@ import cn.bingoogolapple.photopicker.activity.BGAPhotoPickerActivity;
 import cn.bingoogolapple.photopicker.activity.BGAPhotoPickerPreviewActivity;
 import cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout;
 
+/**
+ * Created by xiaowu on 2016//21.
+ */
 public class ActivityLiveRequest extends AppCompatActivity {
 
     private static final String TAG = "ActivityLiveRequest";

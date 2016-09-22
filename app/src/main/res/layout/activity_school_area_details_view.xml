@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="apps.ActivitySchoolAreaDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_primary">
+
+        <ImageView
+            android:id="@+id/back_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/left_arrow_white"
+            android:scaleType="centerInside"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_school_area"
+            android:textSize="@dimen/bigger_text_size"
+            android:textColor="@color/color_white"/>
+
+    </RelativeLayout>
+
+    <com.cundong.recyclerview.LRecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/five_design_view_size"
+        android:scrollbars="vertical"/>
+
+</RelativeLayout>

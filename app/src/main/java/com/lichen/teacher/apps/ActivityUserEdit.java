@@ -25,6 +25,9 @@ import java.util.List;
 
 import cn.bingoogolapple.photopicker.activity.BGAPhotoPickerActivity;
 
+/**
+ * update by xiaowu on 2016/8/20.
+ */
 public class ActivityUserEdit extends AppCompatActivity {
 
     private static final String TAG = "ActivityUserEdit";

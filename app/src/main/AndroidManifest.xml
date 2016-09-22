@@ -56,7 +56,14 @@
         <activity android:name=".apps.ActivityUserEdit" />
         <activity android:name=".apps.ActivityChangePassword" />
         <activity android:name=".apps.ActivityLiveRequest" />
-        <activity android:name=".apps.ActivityProfit"></activity>
+        <activity android:name=".apps.ActivityMyProfit" />
+        <activity android:name=".apps.ActivityAuditingMessage" />
+        <activity android:name=".apps.ActivityMyClass" />
+        <activity android:name=".apps.ActivityCreateClass" />
+        <activity android:name=".apps.ActivityAlreadyLive" />
+        <activity android:name=".apps.ActivityWaitLive"/>
+        <activity android:name=".apps.ActivitySchoolArea"/>
+        <activity android:name=".apps.ActivitySchoolAreaDetails" android:hardwareAccelerated="false" />
     </application>
 
 </manifest>

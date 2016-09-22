@@ -1,42 +1,36 @@
 package com.lichen.teacher.apps;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.lichen.teacher.R;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 import cn.bingoogolapple.photopicker.activity.BGAPhotoPickerActivity;
 import cn.bingoogolapple.photopicker.activity.BGAPhotoPickerPreviewActivity;
 import cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout;
 
 /**
- * update by xiaowu on 2016/8/24.
+ * Created by xiaowu on 2016/9/21.
  */
-public class ActivityWriteBlog extends AppCompatActivity {
-
-    private static final String TAG = "ActivityWriteBlog";
+public class ActivityCreateClass extends AppCompatActivity {
 
     private static final int REQUEST_CODE_CHOOSE_PHOTO = 1;
     private static final int REQUEST_CODE_PHOTO_PREVIEW = 2;
-    private static final int MAX_PHOTO_COUNT = 9;
 
-    private BGASortableNinePhotoLayout mAddPhotosView;
-    private TextView mSendView;
+    private ImageView mBackView;
+    private BGASortableNinePhotoLayout mAddPhotoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_write_blog);
+        setContentView(R.layout.activity_create_class_view);
 
         initView();
         setViewListener();
@@ -46,53 +40,47 @@ public class ActivityWriteBlog extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE_CHOOSE_PHOTO) {
-            mAddPhotosView.setData(BGAPhotoPickerActivity.getSelectedImages(data));
+            mAddPhotoView.setData(BGAPhotoPickerActivity.getSelectedImages(data));
         } else if (requestCode == REQUEST_CODE_PHOTO_PREVIEW) {
-            mAddPhotosView.setData(BGAPhotoPickerPreviewActivity.getSelectedImages(data));
+            mAddPhotoView.setData(BGAPhotoPickerPreviewActivity.getSelectedImages(data));
         }
     }
+
+    private View.OnClickListener mBackViewClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            onBackPressed();
+        }
+    };
 
     private BGASortableNinePhotoLayout.Delegate mDelegate = new BGASortableNinePhotoLayout.Delegate() {
         @Override
         public void onClickAddNinePhotoItem(BGASortableNinePhotoLayout sortableNinePhotoLayout, View view, int position, ArrayList<String> models) {
             File downloadDir = new File(Environment.getExternalStorageDirectory(), "LichenTeacher/image");
-            startActivityForResult(BGAPhotoPickerActivity.newIntent(ActivityWriteBlog.this, downloadDir, MAX_PHOTO_COUNT,
-                    mAddPhotosView.getData()), REQUEST_CODE_CHOOSE_PHOTO);
+            startActivityForResult(BGAPhotoPickerActivity.newIntent(ActivityCreateClass.this, downloadDir, 1,
+                    mAddPhotoView.getData()), REQUEST_CODE_CHOOSE_PHOTO);
         }
 
         @Override
         public void onClickDeleteNinePhotoItem(BGASortableNinePhotoLayout sortableNinePhotoLayout, View view, int position, String model, ArrayList<String> models) {
-            mAddPhotosView.removeItem(position);
+            mAddPhotoView.removeItem(position);
         }
 
         @Override
         public void onClickNinePhotoItem(BGASortableNinePhotoLayout sortableNinePhotoLayout, View view, int position, String model, ArrayList<String> models) {
-            startActivityForResult(BGAPhotoPickerPreviewActivity.newIntent(ActivityWriteBlog.this, MAX_PHOTO_COUNT,
+            startActivityForResult(BGAPhotoPickerPreviewActivity.newIntent(ActivityCreateClass.this, 1,
                     models, models, position, false), REQUEST_CODE_PHOTO_PREVIEW);
-
-        }
-    };
-
-    private View.OnClickListener mSendViewClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            List list = mAddPhotosView.getData();
-            Log.e(TAG, list.toString());
         }
     };
 
     private void initView() {
-        mAddPhotosView = (BGASortableNinePhotoLayout) findViewById(R.id.add_photos_view);
-        mAddPhotosView.init(this);
-        mSendView =(TextView) findViewById(R.id.send_view);
-        mSendView.setOnClickListener(mSendViewClickListener);
+        mBackView = (ImageView) findViewById(R.id.back_view);
+        mAddPhotoView = (BGASortableNinePhotoLayout) findViewById(R.id.add_photo_view);
+        mAddPhotoView.init(this);
     }
 
     private void setViewListener() {
-        mAddPhotosView.setDelegate(mDelegate);
+        mBackView.setOnClickListener(mBackViewClickListener);
+        mAddPhotoView.setDelegate(mDelegate);
     }
-
-//    private void choicePhotoWrapper() {
-//            startActivityForResult(BGAPhotoPickerActivity.newIntent(this, null, MAX_PHOTO_COUNT, mAddPhotosView.getData()), REQUEST_CODE_CHOOSE_PHOTO);
-//    }
 }

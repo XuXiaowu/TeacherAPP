@@ -18,6 +18,9 @@ import com.lichen.teacher.util.FileUtils;
 import java.io.File;
 import java.text.DecimalFormat;
 
+/**
+ * update by xiaowu on 2016/8/23.
+ */
 public class ActivitySetting extends AppCompatActivity {
 
     private RelativeLayout mClearCatchView;

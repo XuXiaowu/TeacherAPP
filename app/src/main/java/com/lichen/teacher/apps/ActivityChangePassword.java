@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import com.lichen.teacher.R;
 
+/**
+ * update by xiaowu on 2016/8/21.
+ */
 public class ActivityChangePassword extends AppCompatActivity {
 
     @Override

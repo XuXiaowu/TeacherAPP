@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lichen.teacher.apps.ActivityProfit">
+    tools:context=".apps.ActivityMyProfit"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/title_bar_view"
@@ -32,10 +33,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title_bar_view"
         android:background="@color/color_primary">
 
         <TextView
+            android:id="@+id/balance_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/five_design_view_size"
@@ -44,7 +45,37 @@
             android:textColor="@color/color_white"
             android:text="¥0.00"/>
 
+        <Button
+            android:id="@+id/withdrawals_view"
+            android:layout_width="@dimen/one_hundred_design_view_size"
+            android:layout_height="@dimen/four_design_view_size"
+            android:layout_marginTop="@dimen/two_design_view_size"
+            android:layout_marginBottom="@dimen/four_design_view_size"
+            android:layout_below="@+id/balance_view"
+            android:layout_centerHorizontal="true"
+            android:text="@string/my_profit_withdrawals"
+            android:textColor="@color/color_white"
+            android:background="@drawable/blue_white_edge_btn_selector"/>
+
 
     </RelativeLayout>
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/one_design_view_size"
+        android:layout_marginLeft="@dimen/half_design_view_size"
+        android:text="@string/my_profit_history_bill"
+        android:textColor="@color/color_text1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_primary_gary_dark"/>
+
+    <com.cundong.recyclerview.LRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

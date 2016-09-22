@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/one_design_view_size"
+    android:layout_marginRight="@dimen/one_design_view_size"
+    android:layout_marginTop="@dimen/one_design_view_size"
+    android:background="@drawable/school_area_detail_item_bg">
+
+    <TextView
+        android:id="@+id/location_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_design_view_size"
+        android:layout_marginBottom="@dimen/one_design_view_size"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_text2"
+        android:text="发送附件奥拉夫骄傲了睡觉了敬爱放"/>
+
+    <View
+        android:id="@+id/dotted_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_below="@+id/location_view"
+        android:background="@drawable/dotted_line"/>
+
+    <TextView
+        android:id="@+id/phone_number_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_marginBottom="@dimen/one_design_view_size"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_primary"
+        android:layout_below="@+id/dotted_line_view"
+        android:drawableLeft="@drawable/phone_icon"
+        android:autoLink="phone"
+        android:text="10165656266"/>
+
+</RelativeLayout>

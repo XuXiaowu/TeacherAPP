@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="apps.ActivitySchoolArea">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_primary">
+
+        <ImageView
+            android:id="@+id/back_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/left_arrow_white"
+            android:scaleType="centerInside"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_school_area"
+            android:textSize="@dimen/bigger_text_size"
+            android:textColor="@color/color_white"/>
+
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/expandable_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:groupIndicator="@null"
+        android:divider="@null"/>
+
+</RelativeLayout>

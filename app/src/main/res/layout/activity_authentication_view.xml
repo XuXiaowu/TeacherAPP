@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/user_setting"
+                android:text="@string/auth_title"
                 android:textSize="@dimen/bigger_text_size"
                 android:textColor="@color/color_white"/>
 

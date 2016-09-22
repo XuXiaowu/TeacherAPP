@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.cundong.recyclerview.HeaderAndFooterRecyclerViewAdapter;
@@ -22,9 +21,13 @@ import com.cundong.recyclerview.LRecyclerView;
 import com.cundong.recyclerview.util.RecyclerViewUtils;
 import com.lichen.teacher.R;
 import com.lichen.teacher.adapter.HomeAdapter;
+import com.lichen.teacher.apps.ActivityAlreadyLive;
+import com.lichen.teacher.apps.ActivityAuditingMessage;
 import com.lichen.teacher.apps.ActivityAuthentication;
-import com.lichen.teacher.apps.ActivityExamView;
 import com.lichen.teacher.apps.ActivityLiveRequest;
+import com.lichen.teacher.apps.ActivityMyClass;
+import com.lichen.teacher.apps.ActivityMyProfit;
+import com.lichen.teacher.apps.ActivityWaitLive;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,10 +87,36 @@ public class FragmentHome extends Fragment {
     private View.OnClickListener mFunctionViewClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            Intent intent;
             switch (v.getId()) {
+                case R.id.message_function_view:
+                    intent = new Intent();
+                    intent.setClass(getActivity(), ActivityAuditingMessage.class);
+                    startActivity(intent);
+                    break;
+                case R.id.already_teaching_function_view:
+                    intent = new Intent();
+                    intent.setClass(getActivity(), ActivityAlreadyLive.class);
+                    startActivity(intent);
+                    break;
+                case R.id.not_teaching_function_view:
+                    intent = new Intent();
+                    intent.setClass(getActivity(), ActivityWaitLive.class);
+                    startActivity(intent);
+                    break;
                 case R.id.live_request_function_view:
-                    Intent intent = new Intent();
+                    intent = new Intent();
                     intent.setClass(getActivity(), ActivityLiveRequest.class);
+                    startActivity(intent);
+                    break;
+                case R.id.class_manage_function_view:
+                    intent = new Intent();
+                    intent.setClass(getActivity(), ActivityMyClass.class);
+                    startActivity(intent);
+                    break;
+                case R.id.my_profit_function_view:
+                    intent = new Intent();
+                    intent.setClass(getActivity(), ActivityMyProfit.class);
                     startActivity(intent);
                     break;
             }

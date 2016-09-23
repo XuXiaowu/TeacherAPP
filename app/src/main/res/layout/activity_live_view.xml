@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lichen.teacher.apps.ActivityLive"
+    android:orientation="vertical">
+
+    <com.gensee.view.LocalVideoViewEx
+        android:id="@+id/local_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <com.gensee.view.GSVideoView
+        android:id="@+id/cast_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/join_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加入"/>
+
+        <Button
+            android:id="@+id/exit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"/>
+
+        <Button
+            android:id="@+id/video_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/join_btn"
+            android:text="video"/>
+
+        <Button
+            android:id="@+id/publish_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/join_btn"
+            android:text="publish"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

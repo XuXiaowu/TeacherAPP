@@ -24,6 +24,7 @@ import com.lichen.teacher.adapter.HomeAdapter;
 import com.lichen.teacher.apps.ActivityAlreadyLive;
 import com.lichen.teacher.apps.ActivityAuditingMessage;
 import com.lichen.teacher.apps.ActivityAuthentication;
+import com.lichen.teacher.apps.ActivityLive;
 import com.lichen.teacher.apps.ActivityLiveRequest;
 import com.lichen.teacher.apps.ActivityMyClass;
 import com.lichen.teacher.apps.ActivityMyProfit;
@@ -106,7 +107,8 @@ public class FragmentHome extends Fragment {
                     break;
                 case R.id.live_request_function_view:
                     intent = new Intent();
-                    intent.setClass(getActivity(), ActivityLiveRequest.class);
+//                    intent.setClass(getActivity(), ActivityLiveRequest.class);
+                    intent.setClass(getActivity(), ActivityLive.class);
                     startActivity(intent);
                     break;
                 case R.id.class_manage_function_view:

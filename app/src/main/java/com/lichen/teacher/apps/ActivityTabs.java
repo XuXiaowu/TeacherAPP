@@ -1,29 +1,30 @@
 package com.lichen.teacher.apps;
 
-import android.content.DialogInterface;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lichen.teacher.R;
-import com.lichen.teacher.apps.fragments.FragmentCommunity;
+import com.lichen.teacher.apps.fragments.FragmentChat;
 import com.lichen.teacher.apps.fragments.FragmentHome;
 import com.lichen.teacher.apps.fragments.FragmentLive;
-import com.lichen.teacher.apps.fragments.FragmentUser;
+import com.lichen.teacher.apps.fragments.FragmentMore;
+import com.lichen.teacher.global.Constant;
 import com.lichen.teacher.util.ShowUtils;
 import com.lichen.teacher.view.NoScrollViewPager;
 import com.umeng.analytics.MobclickAgent;
@@ -32,7 +33,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//import com.lecloud.download.control.LeDownloadService;
 
 /**
  * update by xiaowu on 2016/8/18.
@@ -42,26 +42,39 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
 
     private static final String TAG = "ActivityTabs";
 
+    private static final int PAGE_POSITION_HOME = 0;
+    private static final int PAGE_POSITION_LIVE = 1;
+    private static final int PAGE_POSITION_CHAT = 2;
+    private static final int PAGE_POSITION_MORE = 3;
+
     private NoScrollViewPager mViewPager;
     private TextView mDockTitleHomeView;
-    private TextView mDockTitleCommunityView;
+    private TextView mDockTitleChatView;
     private TextView mDockTitleLiveView;
     private TextView mDockTitleUserView;
 
     private ImageView mDockIconHomeView;
-    private ImageView mDockIconCommunityView;
+    private ImageView mDockIconChatView;
     private ImageView mDockIconLiveView;
     private ImageView mDockIconUserView;
 
     private LinearLayout mDockHomeView;
-    private LinearLayout mDockCommunityView;
+    private LinearLayout mDockChatView;
     private LinearLayout mDockLiveView;
     private LinearLayout mDockUserView;
 
     private List<Fragment> mFragmentList = new ArrayList();
     private List<ImageView> mDockIconViews = new ArrayList<>();
     private List<TextView> mDockTitleViews = new ArrayList<>();
+    private List<LinearLayout> mDockViews = new ArrayList();
     private String mNewVersionDownloadUrl;
+
+    private FragmentHome mFragmentHome;
+    private FragmentLive mFragmentLive;
+//    private FragmentHome.UpdateMessageNoticeReceiver mUpdateMessageNoticeReceiver;
+//    private FragmentLive.NotifyListReceiver mNotifyListReceiver;
+    private Receiver mReceiver;
+    private  LocalBroadcastManager mLocalBroadcastManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +82,11 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
         setContentView(R.layout.activity_tabs_view);
 
         initView();
+        checkHomeDockView();
         addRbViewList();
         addListener();
         setUpViewPager();
+        registerReceiver();
 //        checkUpdate();
     }
 
@@ -88,23 +103,38 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver();
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.dock_home_view:
-                mViewPager.setCurrentItem(0);
-                selectDockView(0);
-                break;
-            case R.id.dock_community_view:
-                mViewPager.setCurrentItem(1);
-                selectDockView(1);
+                selectPageHome();
+
+//                intent = new Intent(Constant.UPDATE_MESSAGE_NOTICE_ACTION);
+//                mLocalBroadcastManager.sendBroadcast(intent);
+
+//                mFragmentHome.updateMessageNotice();
+                mFragmentLive.setCountdownEnable(false);
                 break;
             case R.id.dock_live_view:
-                mViewPager.setCurrentItem(2);
-                selectDockView(2);
+                selectPageLive();
+
+//                intent = new Intent(Constant.NOTIFY_LIST_ACTION);
+//                intent.putExtra(Constant.EXTRA_FRAGMENT_LIVE_COUNT_DOWN_TAG, FragmentLive.COUNT_DOWN_START);
+//                mLocalBroadcastManager.sendBroadcast(intent);
+                mFragmentLive.setCountdownEnable(true);
+                break;
+            case R.id.dock_chat_view:
+                selectPageChat();
+                mFragmentLive.setCountdownEnable(false);
                 break;
             case R.id.dock_user_view:
-                mViewPager.setCurrentItem(3);
-                selectDockView(3);
+                selectPageMore();
+                mFragmentLive.setCountdownEnable(false);
                 break;
             default:
                 break;
@@ -193,6 +223,42 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
 //        }
 //    };
 
+    private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+//            Intent intent;
+//            if (position == PAGE_POSITION_LIVE) {
+//                intent = new Intent(Constant.NOTIFY_LIST_ACTION);
+//                intent.putExtra(Constant.EXTRA_FRAGMENT_LIVE_COUNT_DOWN_TAG, FragmentLive.COUNT_DOWN_START);
+//                mLocalBroadcastManager.sendBroadcast(intent);
+//            } else if (position == PAGE_POSITION_HOME){
+////                intent = new Intent(Constant.UPDATE_MESSAGE_NOTICE_ACTION);
+////                mLocalBroadcastManager.sendBroadcast(intent);
+//
+////                mFragmentHome.updateMessageNotice();
+//
+//                intent = new Intent(Constant.NOTIFY_LIST_ACTION);
+//                intent.putExtra(Constant.EXTRA_FRAGMENT_LIVE_COUNT_DOWN_TAG, FragmentLive.COUNT_DOWN_STOP);
+//                mLocalBroadcastManager.sendBroadcast(intent);
+//            }else {
+//                intent = new Intent(Constant.NOTIFY_LIST_ACTION);
+//                intent.putExtra(Constant.EXTRA_FRAGMENT_LIVE_COUNT_DOWN_TAG, FragmentLive.COUNT_DOWN_STOP);
+//                mLocalBroadcastManager.sendBroadcast(intent);
+//            }
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
+
     class MyAdapter extends FragmentPagerAdapter {
 
         public MyAdapter(FragmentManager fm) {
@@ -211,21 +277,36 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
 
     }
 
+    public class Receiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            switch (action) {
+                case Constant.SELECT_CHAT_PAGE_ACTION:
+                    selectPageChat();
+                    break;
+                case Constant.SELECT_HOME_PAGE_ACTION:
+                    selectPageHome();
+                    break;
+            }
+        }
+    }
+
     private void initView() {
         mDockIconHomeView = (ImageView) findViewById(R.id.dock_home_icon_view);
-        mDockIconCommunityView = (ImageView) findViewById(R.id.dock_community_icon_view);
+        mDockIconChatView = (ImageView) findViewById(R.id.dock_chat_icon_view);
         mDockIconLiveView = (ImageView) findViewById(R.id.dock_live_icon_view);
         mDockIconUserView = (ImageView) findViewById(R.id.dock_user_icon_view);
 
         mDockHomeView = (LinearLayout) findViewById(R.id.dock_home_view);
-        mDockHomeView.setSelected(true);
-        mDockCommunityView = (LinearLayout) findViewById(R.id.dock_community_view);
+        mDockChatView = (LinearLayout) findViewById(R.id.dock_chat_view);
         mDockLiveView = (LinearLayout) findViewById(R.id.dock_live_view);
         mDockUserView = (LinearLayout) findViewById(R.id.dock_user_view);
 
         mDockTitleHomeView = (TextView) findViewById(R.id.dock_home_title_view);
         mDockTitleHomeView.setTextColor(getResources().getColor(R.color.color_primary));
-        mDockTitleCommunityView = (TextView) findViewById(R.id.dock_community_title_view);
+        mDockTitleChatView = (TextView) findViewById(R.id.dock_chat_title_view);
         mDockTitleLiveView = (TextView) findViewById(R.id.dock_live_title_view);
         mDockTitleUserView = (TextView) findViewById(R.id.dock_user_title_view);
 
@@ -234,39 +315,40 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
 
     private void addRbViewList() {
         mDockIconViews.add(mDockIconHomeView);
-        mDockIconViews.add(mDockIconCommunityView);
         mDockIconViews.add(mDockIconLiveView);
+        mDockIconViews.add(mDockIconChatView);
         mDockIconViews.add(mDockIconUserView);
 
         mDockTitleViews.add(mDockTitleHomeView);
-        mDockTitleViews.add(mDockTitleCommunityView);
         mDockTitleViews.add(mDockTitleLiveView);
+        mDockTitleViews.add(mDockTitleChatView);
         mDockTitleViews.add(mDockTitleUserView);
+
+        mDockViews.add(mDockHomeView);
+        mDockViews.add(mDockLiveView);
+        mDockViews.add(mDockChatView);
+        mDockViews.add(mDockUserView);
     }
 
     private void addListener() {
         mDockHomeView.setOnClickListener(this);
-        mDockCommunityView.setOnClickListener(this);
+        mDockChatView.setOnClickListener(this);
         mDockLiveView.setOnClickListener(this);
         mDockUserView.setOnClickListener(this);
     }
 
     private void setUpViewPager() {
-//        fragmentList.add(new Activity_One());
-//		fragmentList.add(new Activity_Allcourse());
-//		fragmentList.add(new Activity_Exam());
-//		fragmentList.add(new Activity_Three());
-//		fragmentList.add(new Activity_Four());
-
-        //new vision
-        mFragmentList.add(new FragmentHome());
-        mFragmentList.add(new FragmentCommunity());
-        mFragmentList.add(new FragmentLive());
-        mFragmentList.add(new FragmentUser());
+        mFragmentHome = new FragmentHome();
+        mFragmentLive = new FragmentLive();
+        mFragmentList.add(mFragmentHome);
+        mFragmentList.add(mFragmentLive);
+        mFragmentList.add(new FragmentChat());
+        mFragmentList.add(new FragmentMore());
         mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         mViewPager.setCurrentItem(0);
         mViewPager.setNoScroll(true);
-        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setOffscreenPageLimit(4);
+        mViewPager.addOnPageChangeListener(mOnPageChangeListener);
     }
 
 
@@ -288,10 +370,63 @@ public class ActivityTabs extends FragmentActivity implements OnClickListener {
         for (int i = 0; i < mDockIconViews.size(); i++) {
             mDockIconViews.get(i).setSelected(false);
             mDockTitleViews.get(i).setTextColor(getResources().getColor(R.color.color_text3));
+            mDockViews.get(i).setClickable(true);
         }
         mDockIconViews.get(position).setSelected(true);
         mDockTitleViews.get(position).setTextColor(getResources().getColor(R.color.color_primary));
+        mDockViews.get(position).setClickable(false);
 
+    }
+
+    private void registerReceiver() {
+        mLocalBroadcastManager = LocalBroadcastManager.getInstance(this);
+
+//        mUpdateMessageNoticeReceiver = mFragmentHome.new UpdateMessageNoticeReceiver();
+//        IntentFilter updateMessageNoticeIntentFilter = new IntentFilter();
+//        updateMessageNoticeIntentFilter.addAction(Constant.UPDATE_MESSAGE_NOTICE_ACTION);
+//        mLocalBroadcastManager.registerReceiver(mUpdateMessageNoticeReceiver, updateMessageNoticeIntentFilter);
+
+//        FragmentLive.NotifyListReceiver notifyListReceiver = mFragmentLive.new NotifyListReceiver();
+//        IntentFilter notifyListIntentFilter = new IntentFilter();
+//        notifyListIntentFilter.addAction(Constant.NOTIFY_LIST_ACTION);
+//        mLocalBroadcastManager.registerReceiver(notifyListReceiver, notifyListIntentFilter);
+
+        mReceiver = new Receiver();
+        IntentFilter receiverIntentFilter = new IntentFilter();
+        receiverIntentFilter.addAction(Constant.SELECT_CHAT_PAGE_ACTION);
+        receiverIntentFilter.addAction(Constant.SELECT_HOME_PAGE_ACTION);
+        mLocalBroadcastManager.registerReceiver(mReceiver,receiverIntentFilter);
+    }
+
+    private void unregisterReceiver() {
+//        mLocalBroadcastManager.unregisterReceiver(mUpdateMessageNoticeReceiver);
+//        mLocalBroadcastManager.unregisterReceiver(mNotifyListReceiver);
+        mLocalBroadcastManager.unregisterReceiver(mReceiver);
+    }
+
+    private void checkHomeDockView() {
+        mDockHomeView.setSelected(true);
+        mDockHomeView.setClickable(false);
+    }
+
+    public void selectPageHome() {
+        mViewPager.setCurrentItem(PAGE_POSITION_HOME);
+        selectDockView(PAGE_POSITION_HOME);
+    }
+
+    public void selectPageLive() {
+        mViewPager.setCurrentItem(PAGE_POSITION_LIVE);
+        selectDockView(PAGE_POSITION_LIVE);
+    }
+
+    public void selectPageChat() {
+        mViewPager.setCurrentItem(PAGE_POSITION_CHAT);
+        selectDockView(PAGE_POSITION_CHAT);
+    }
+
+    public void selectPageMore() {
+        mViewPager.setCurrentItem(PAGE_POSITION_MORE);
+        selectDockView(PAGE_POSITION_MORE);
     }
 
 //    private void downloadNewVersion() {

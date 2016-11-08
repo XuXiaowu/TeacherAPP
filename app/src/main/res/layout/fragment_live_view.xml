@@ -1,29 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".apps.ActivityLiveCheck">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_primary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/live_my_title"
+                android:textSize="@dimen/bigger_text_size"
+                android:textColor="@color/color_white"/>
+
+            <ImageView
+                android:id="@+id/right_btn"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/live_record_icon"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackground"/>
+
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <com.cundong.recyclerview.LRecyclerView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical">
-
-    </com.cundong.recyclerview.LRecyclerView>
+        android:layout_below="@+id/title_bar_view"
+        android:scrollbars="vertical"/>
 
     <RelativeLayout
-        android:id="@+id/status_contain_view"
+        android:id="@+id/loading_status_contain_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar_view"
+        android:background="?android:attr/selectableItemBackground">
 
         <TextView
-            android:id="@+id/status_view"
+            android:id="@+id/loading_status_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/loading_data_error_try_again_text"
-            android:visibility="gone"
-            android:background="?android:attr/selectableItemBackground"/>
+            android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/loading_view"
@@ -46,7 +80,8 @@
                 android:layout_marginLeft="@dimen/one_design_view_size"
                 android:layout_marginTop="@dimen/one_design_view_size"
                 android:gravity="center"
-                android:text="@string/loading_text" />
+                android:text="@string/loading_text"
+                android:visibility="visible"/>
 
         </LinearLayout>
 

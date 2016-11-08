@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/name_view"
+                android:id="@+id/user_name_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/one_design_view_size"
@@ -50,7 +50,7 @@
                 android:text="23"/>
 
             <TextView
-                android:id="@+id/introduction_view"
+                android:id="@+id/edit_summary_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/one_design_view_size"
@@ -70,7 +70,7 @@
                 android:background="@color/color_text1"/>
 
             <TextView
-                android:id="@+id/teacher_view"
+                android:id="@+id/date_view"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/vertical_line_view"
                 android:layout_width="wrap_content"

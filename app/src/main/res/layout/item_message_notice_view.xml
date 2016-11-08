@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white">
+
+    <View
+        android:id="@+id/block_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_design_view_size"
+        android:background="@color/color_primary_gary"/>
+
+    <View
+        android:id="@id/cut_line_view"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/block_view"
+        android:layout_height="1px"
+        android:background="@color/color_primary_gary_dark"/>
+
+    <TextView
+        android:id="@+id/activity_title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:layout_below="@+id/cut_line_view"
+        android:textColor="@color/color_text1"
+        android:text="标题标题"/>
+
+    <ImageView
+        android:id="@+id/new_mark_view"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:layout_marginRight="@dimen/half_design_view_size"
+        android:layout_below="@+id/cut_line_view"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/red_circle_bg"/>
+
+    <TextView
+        android:id="@+id/date_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/activity_title_view"
+        android:textSize="@dimen/middle_text_size"
+        android:text="2016-9-21 15:15"/>
+
+    <TextView
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:layout_below="@+id/activity_title_view"
+        android:textSize="@dimen/small_text_size"
+        android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_below="@+id/content_view"
+        android:background="@color/color_primary_gary_dark"/>
+
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

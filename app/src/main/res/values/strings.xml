@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">理臣教育教师版</string>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">理臣网校教师版</string>
     <string name="title_activity_login">Sign in</string>
 
     <string name="confirm">确定</string>
@@ -29,14 +29,6 @@
     <string name="user_school_area">校区</string>
     <string name="user_about">关于</string>
     <string name="user_setting">设置</string>
-    <string name="user_edit_title">修改资料</string>
-    <string name="user_edit_save">保存</string>
-    <string name="user_edit_head">头像</string>
-    <string name="user_edit_nick_name">昵称</string>
-    <string name="user_edit_sex">性别</string>
-    <string name="user_edit_change_password">修改密码</string>
-    <string name="user_edit_signature">个性签名</string>
-    <string name="user_edit_complete">完成</string>
     <string name="setting_live_remind">直播提醒</string>
     <string name="setting_clear_cache">清除缓存</string>
     <string name="setting_feedback">意见反馈</string>
@@ -44,20 +36,79 @@
     <string name="setting_check_update">检查更新</string>
     <string name="setting_about">关于</string>
 
+    <!-- 更多 -->
+    <string name="more_feedback">建议反馈</string>
+    <string name="more_clear_cache">清除缓存</string>
+    <string name="more_check_update">检查更新</string>
+    <string name="more_custom_service_phone">客服电话</string>
+    <string name="more_exit_login">退出当前账号</string>
+    <string name="more_exit_login_dialog_content">确定退出当前账号吗?</string>
+
+    <!-- 修改资料 -->
+    <string name="user_edit_title">修改资料</string>
+    <string name="user_edit_submit">提交</string>
+    <string name="user_edit_head">头像</string>
+    <string name="user_edit_nick_name">昵称</string>
+    <string name="user_edit_sex">性别</string>
+    <string name="user_edit_change_password">修改密码</string>
+    <string name="user_edit_label">标签</string>
+    <string name="user_edit_complete">完成</string>
+
+    <!-- 登录 -->
+    <string name="login_title"> 快乐快速学习财务\n教师版</string>
+    <string name="login_user_id_not_empty">账号不能为空</string>
+    <string name="login_password_not_empty">密码不能为空</string>
+
+
+    <!-- 修改密码 -->
+    <string name="password_edit_prompt_phone">请输入手机号</string>
+    <string name="password_edit_prompt_identifying_code">请输入验证码</string>
+    <string name="password_edit_prompt_password">设置新密码</string>
+    <string name="password_edit_prompt_confirm_password">再次确认密码</string>
+    <string name="password_edit_submit">保存修改</string>
+    <string name="password_edit_phone_number_format_error">手机号码格式不正确</string>
+    <string name="password_edit_identifying_code_not_empty">验证码不能为空</string>
+    <string name="password_edit_password_not_empty">密码不能为空</string>
+    <string name="password_edit_password_not_equal">两次输入密码不一致</string>
+    <string name="password_edit_title_retrieve">找回密码</string>
+    <string name="password_edit_title_register">注册</string>
+    <string name="password_edit_title_change">修改密码</string>
+    <string name="password_edit_submit_register">注册</string>
+    <string name="password_edit_submit_change">保存修改</string>
+    <string name="password_edit_submit_retrieve">提交</string>
+
+    <!-- 建议反馈 -->
+    <string name="feedback_edit_hint">请描述你的问题和建议，衷心感谢您的支持！</string>
+    <string name="feedback_submit">提交反馈</string>
+    <string name="feedback_content_must_not_empty">反馈内容不能为空</string>
+    <string name="feedback_content_uploading">反馈内容提交中...</string>
+
+    <!-- 检查更新 -->
+    <string name="downloading_new_version">正在下载新版本</string>
+    <string name="downloading_new_version_finish">新版本下载完成</string>
+    <string name="downloading_new_version_error">新版本下载失败</string>
+    <string name="find_new_version">发现新版本</string>
+    <string name="already_is_new_version">已经是最新版本</string>
+    <string name="now_update">现在升级</string>
+    <string name="next_update">下次再说</string>
+
     <!-- 首页 -->
     <string name="home_message">审核消息</string>
+    <string name="home_check_progress">审核进度</string>
     <string name="home_already_teaching">已上课</string>
-    <string name="home_not_teaching">待上课</string>
+    <string name="home_wait_teaching">等待直播</string>
     <string name="home_live_request">直播申请</string>
-    <string name="home_class_manage">班级管理</string>
+    <string name="home_live_leave_message">直播留言</string>
+    <string name="home_live_leave_record">直播记录</string>
     <string name="home_my_profit">我的收益</string>
-    <string name="home_click_down_student_app">点击下载理财教育学生版</string>
+    <string name="home_new_leave_message">最新留言</string>
+    <string name="home_new_leave_message_empty">没有收到直播留言,先去直播吧!</string>
 
     <!-- tab -->
     <string name="dock_home">首页</string>
-    <string name="dock_community">社区</string>
+    <string name="dock_chat">交流</string>
     <string name="dock_live">直播</string>
-    <string name="dock_user">我的</string>
+    <string name="dock_more">更多</string>
     <string name="exit_application">再按一次退出程序</string>
     <string name="sure">确定</string>
 
@@ -92,13 +143,19 @@
     <string name="live_request_image">课程图片</string>
     <string name="live_request_date_error_hint">直播开始时间不能晚于结束时间</string>
 
+    <!-- 修改申请 -->
+    <string name="live_request_edit_title">修改申请</string>
+
+    <!-- 直播详情 -->
+    <string name="live_details_title">直播详情</string>
+
     <!-- 我的收益 -->
     <string name="my_profit_title">我的收益</string>
     <string name="my_profit_withdrawals">提现</string>
     <string name="my_profit_history_bill">历史账单</string>
 
-    <!-- 审核消息 -->
-    <string name="auditing_message">审核消息</string>
+    <!-- 消息通知 -->
+    <string name="message_notice_title">消息通知</string>
 
     <!-- 我的班级 -->
     <string name="my_class_title">我的班级</string>
@@ -116,6 +173,56 @@
 
     <!-- 待上课 -->
     <string name="live_wait_play_title">待上课</string>
+
+    <!-- 交流 -->
+    <string name="chat_title">交流</string>
+    <string name="chat_replay">回复</string>
+    <string name="chat_teacher_replay">老师回复:</string>
+    <string name="chat_teacher_replay_delete">删除</string>
+    <string name="chat_teacher_replay_modify">修改</string>
+    <string name="chat_teacher_replay_send">发送</string>
+    <string name="chat_all">本场全部</string>
+    <string name="chat_not_replay">未回复</string>
+    <string name="chat_already_replay">已回复</string>
+
+    <!-- 审核进度 -->
+    <string name="live_check_title">审核进度</string>
+    <string name="live_check_status_wait">等待审核</string>
+    <string name="live_check_not_pass">审核未通过</string>
+
+    <!-- 我的直播 -->
+    <string name="live_my_title">我的直播</string>
+    <string name="live_my_start">开始直播</string>
+    <string name="live_my_not_start">尚未开始</string>
+    <string name="live_my_count_down_time">距离直播还有 %s</string>
+    <string name="live_my_count_down_date">距离直播还有 %s 天</string>
+    <string name="live_my_count_down_doing">直播进行中</string>
+
+    <!-- 历史记录 -->
+    <string name="live_record_title">历史记录</string>
+
+    <!-- 我的直播详情 -->
+    <string name="live_my_details_share">邀请分享</string>
+
+    <!-- 直播 -->
+    <string name="live_chat_title">直播交流</string>
+    <string name="live_chat_user_num">当前 %d 人</string>
+    <string name="live_join_live_service">正在连接直播服务器...</string>
+    <string name="live_join_room">正在加入房间...</string>
+    <string name="live_open_live">正在开启直播...</string>
+    <string name="live_menu_change_camera">切换镜头</string>
+    <string name="live_menu_pause">暂停直播</string>
+    <string name="live_menu_resume">继续直播</string>
+    <string name="live_menu_finish">结束直播</string>
+    <string name="live_publish_pause">直播已暂停</string>
+    <string name="live_publish_resume">直播已继续</string>
+    <string name="live_finish_dialog_message">确定要结束直播吗?</string>
+    <string name="live_pause_dialog_message">退出房间会中断直播，确定退出吗?</string>
+
+    <!-- 直播结束 -->
+    <string name="live_finish_go_to_chat">去交流页</string>
+    <string name="live_finish_back_to_home">返回首页</string>
+    <string name="live_finish_title">本场直播已结束！</string>
 
 
 </resources>

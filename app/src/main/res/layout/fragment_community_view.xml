@@ -13,12 +13,12 @@
     </com.cundong.recyclerview.LRecyclerView>
 
     <RelativeLayout
-        android:id="@+id/status_contain_view"
+        android:id="@+id/loading_status_contain_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/status_view"
+            android:id="@+id/loading_status_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"

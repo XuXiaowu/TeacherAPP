@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/cover_view"
+        android:layout_width="@dimen/one_hundred_design_view_size"
+        android:layout_height="@dimen/seventy_five_design_view_size"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/one_design_view_size"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover_default" />
+
+    <TextView
+        android:id="@+id/activity_title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_toRightOf="@+id/cover_view"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:singleLine="true"
+        android:text="标题"
+        android:textColor="@color/color_text1" />
+
+    <TextView
+        android:id="@+id/price_edit_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cover_view"
+        android:layout_below="@+id/activity_title_view"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:singleLine="true"
+        android:text="¥ 0.0"
+        android:textColor="@color/color_text3"
+        android:textSize="@dimen/middle_text_size" />
+
+    <TextView
+        android:id="@+id/date_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cover_view"
+        android:layout_below="@+id/price_edit_view"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:singleLine="true"
+        android:text="10-10 10:10"
+        android:textColor="@color/color_text3"
+        android:textSize="@dimen/middle_text_size" />
+
+    <TextView
+        android:id="@+id/status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/color_green"
+        android:text="等待审核"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/cover_view"
+        android:background="@color/color_primary_gary_dark" />
+
+</RelativeLayout>

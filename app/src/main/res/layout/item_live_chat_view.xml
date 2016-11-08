@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/bg_view"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_above="@+id/empty_view"
+        android:background="@color/color_transparent_gary1"/>
+
+    <TextView
+        android:id="@+id/user_name_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/two_design_view_size"
+        android:layout_marginLeft="@dimen/five_design_view_size"
+        android:textColor="@color/color_text2"
+        android:textSize="@dimen/middle_text_size"
+        android:text="用户名"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/time_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/two_design_view_size"
+        android:layout_alignRight="@+id/chat_content_view"
+        android:textColor="@color/color_text3"
+        android:textSize="@dimen/middle_text_size"
+        android:text="20:30:29"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/chat_content_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:layout_marginBottom="@dimen/one_design_view_size"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_alignLeft="@+id/user_name_view"
+        android:layout_below="@+id/user_name_view"
+        android:textColor="@color/color_text2"
+        android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"/>
+
+    <View
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:visibility="visible"
+        android:layout_below="@+id/chat_content_view"
+        android:background="@color/color_transparent"/>
+
+    <RelativeLayout
+        android:id="@+id/vertical_contain_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/user_name_view"
+        android:layout_alignBottom="@+id/empty_view">
+
+        <View
+            android:id="@+id/vertical_line_view"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:background="@color/color_primary_gary_dark"/>
+
+        <com.lichen.teacher.view.CircleImageView
+            android:id="@+id/user_head_view"
+            android:layout_width="@dimen/three_design_view_size"
+            android:layout_height="@dimen/three_design_view_size"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:layout_marginBottom="@dimen/one_design_view_size"
+            android:visibility="visible"
+            android:src="@drawable/live_chat_teacher_head_icon"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

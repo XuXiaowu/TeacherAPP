@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".apps.ActivityProfit">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_primary">
+
+            <ImageView
+                android:id="@+id/back_view"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/my_profit_title"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/bigger_text_size" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/balance_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar_view"
+        android:background="@color/color_primary">
+
+        <TextView
+            android:id="@+id/balance_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/five_design_view_size"
+            android:layout_marginTop="@dimen/five_design_view_size"
+            android:text="¥0.00"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/bbbb_bigger_text_size" />
+
+        <!--<Button-->
+        <!--android:id="@+id/withdrawals_view"-->
+        <!--android:layout_width="@dimen/one_hundred_design_view_size"-->
+        <!--android:layout_height="@dimen/four_design_view_size"-->
+        <!--android:layout_marginTop="@dimen/two_design_view_size"-->
+        <!--android:layout_marginBottom="@dimen/four_design_view_size"-->
+        <!--android:layout_below="@+id/balance_view"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:text="@string/my_profit_withdrawals"-->
+        <!--android:textColor="@color/color_white"-->
+        <!--android:background="@drawable/blue_white_edge_btn_selector"/>-->
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bill_title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/balance_contain_view"
+        android:layout_marginLeft="@dimen/half_design_view_size"
+        android:padding="@dimen/one_design_view_size"
+        android:text="@string/my_profit_history_bill"
+        android:textColor="@color/color_text1" />
+
+    <View
+        android:id="@id/cut_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/bill_title_view"
+        android:background="@color/color_primary_gary_dark" />
+
+    <com.cundong.recyclerview.LRecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cut_line_view" />
+
+    <RelativeLayout
+        android:id="@+id/loading_status_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cut_line_view"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/loading_status_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/loading_data_error_try_again_text"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/one_design_view_size"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:gravity="center"
+                android:text="@string/loading_text"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

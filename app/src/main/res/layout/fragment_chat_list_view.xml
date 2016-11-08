@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".apps.ActivityLiveCheck">
+
+    <com.cundong.recyclerview.LRecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
+
+    <RelativeLayout
+        android:id="@+id/loading_status_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/loading_status_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/loading_data_error_try_again_text"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/one_design_view_size"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:gravity="center"
+                android:text="@string/loading_text"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/edit_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white"
+        android:visibility="invisible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_primary_gary_dark"/>
+
+        <EditText
+            android:id="@+id/edit_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="80%w"
+            app:layout_marginLeftPercent="2%w"
+            android:layout_alignParentBottom="true"
+            android:hint=""/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/edit_view"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:layout_marginBottom="@dimen/one_design_view_size"
+            app:layout_marginLeftPercent="1%w"
+            android:background="@color/color_primary_gary_dark"/>
+
+        <TextView
+            android:id="@+id/send_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="15%w"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textColor="@color/color_primary"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/chat_teacher_replay_send"/>
+
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+</RelativeLayout>

@@ -17,15 +17,16 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.flash" />
-    <uses-permission android:name="android.permission.RECORD_VIDEO" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 
     <application
         android:name=".application.MyApplication"
@@ -34,7 +35,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".apps.ActivityUserLogin">
+        <activity android:name=".apps.ActivityLoading" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,6 +48,86 @@
             android:name="com.lichen.teacher.global.MyGlideModule"
             android:value="GlideModule" />
 
+        <!-- ************************************ share SDK *************************************** -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!--
+            	AuthorizeAdapter表示一个继承自cn.sharesdk.framework.authorize.AuthorizeAdapter
+            	的类，这个类可以监听到页面的生命周期，也可以获取授权页面的各种UI控件。
+            	开发者可以通过继承AuthorizeAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            -->
+            <meta-data
+                android:name="AuthorizeAdapter"
+                android:value="cn.sharesdk.demo.MyAdapter" />
+
+            <!--
+            	QZoneWebShareAdapter表示一个继承自cn.sharesdk.tencent.qzone.QZoneWebShareAdapter
+            	的类，这个类可以监听到页面的生命周期，也可以获QQ空间网页分享权页面的各种UI控件。
+            	开发者可以通过继承QZoneWebShareAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            <meta-data android:name="QZoneWebShareAdapter" android:value="cn.sharesdk.demo.MyQZoneWebShareAdapter" />
+            <meta-data android:name="QQWebShareAdapter" android:value="cn.sharesdk.demo.MyQQWebShareAdapter" />
+            -->
+
+
+            <!--
+            	Dropbox的SSO功能需要在此处添加一个对ACTION_VIEW事件的过滤器，其中的scheme是
+            	“db-”前缀再开发者应用的加上appKey。如果此过滤器不设置，则不能完成SSO功能授权
+            -->
+            <intent-filter>
+                <data android:scheme="db-7janx53ilz11gbs" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 调用新浪原生SDK，需要注册的activity -->
+
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 调用新浪原生SDK，需要注册的回调activity -->
+        <!-- <activity -->
+        <!-- android:name="cn.sharesdk.sina.weibo.SinaActivity" -->
+        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".sharesdk.share.demo.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <!-- ************************************ 友盟统计 *************************************** -->
         <meta-data
             android:name="UMENG_APPKEY"
@@ -56,6 +137,8 @@
             android:value="official_website  " />
         <!-- ************************************************************************************ -->
 
+        <service android:name=".service.DownloadService" />
+
         <activity android:name=".apps.ActivityUserRegister" />
         <activity android:name=".apps.ActivityTabs" />
         <activity android:name=".apps.ActivitySetting" />
@@ -63,10 +146,10 @@
         <activity android:name=".apps.ActivityExamView" />
         <activity android:name=".apps.ActivityAuthentication" />
         <activity android:name=".apps.ActivityUserEdit" />
-        <activity android:name=".apps.ActivityChangePassword" />
+        <activity android:name=".apps.ActivityAccountSet" />
         <activity android:name=".apps.ActivityLiveRequest" />
-        <activity android:name=".apps.ActivityMyProfit" />
-        <activity android:name=".apps.ActivityAuditingMessage" />
+        <activity android:name=".apps.ActivityProfit" />
+        <activity android:name=".apps.ActivityMessageNotice" />
         <activity android:name=".apps.ActivityMyClass" />
         <activity android:name=".apps.ActivityCreateClass" />
         <activity android:name=".apps.ActivityAlreadyLive" />
@@ -75,7 +158,17 @@
         <activity
             android:name=".apps.ActivitySchoolAreaDetails"
             android:hardwareAccelerated="false" />
-        <activity android:name=".apps.ActivityLive"></activity>
+        <activity android:name=".apps.ActivityLive" />
+        <activity android:name=".apps.ActivityLiveCheck" />
+        <activity android:name=".apps.ActivityLiveCheckDetails" />
+        <activity android:name=".apps.ActivityLiveMy" />
+        <activity android:name=".apps.ActivityLiveRecord" />
+        <activity android:name=".apps.ActivityLiveDetails" />
+        <activity android:name=".apps.ActivityLiveRecordDetails" />
+        <activity android:name=".apps.ActivityChatDetails" />
+        <activity android:name=".apps.ActivityFeedback" />
+        <activity android:name=".apps.ActivityLiveFinish"/>
+        <activity android:name=".apps.ActivityUserLogin"/>
     </application>
 
 </manifest>

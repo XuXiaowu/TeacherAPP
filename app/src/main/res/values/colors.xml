@@ -13,12 +13,17 @@
     <color name="color_red_press">#95F74D58</color>
     <color name="colorAccent">#FF4081</color>
     <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
 
     <!-- text color  -->
     <color name="color_text1">#323232</color>
     <color name="color_text2">#5b595a</color>
     <color name="color_text3">#969696</color>
     <color name="color_text4">#C6C6C6</color>
+    <color name="color_transparent_gary1">#28000000</color>
+    <color name="color_transparent_gary2">#50000000</color>
+    <color name="color_transparent_white">#90ffffff</color>
+    <color name="color_transparent">#00000000</color>
 
     <!-- other -->
     <color name="color_home_head_view_bg">#414141</color>

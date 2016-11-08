@@ -1,18 +1,19 @@
 package com.lichen.teacher.apps;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.lichen.teacher.R;
+import com.lichen.teacher.global.Constant;
+import com.lichen.teacher.util.PreferenceUtils;
 
 /**
  * update by xiaowu on 2016/8/20.
@@ -37,13 +38,16 @@ public class ActivityUserLogin extends AppCompatActivity {
 
         initView();
         setViewClickListener();
-
+        checkLogin();
     }
 
     private View.OnClickListener mForgetPasswordViewClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent();
+            intent.setClass(ActivityUserLogin.this, ActivityAccountSet.class);
+            intent.putExtra(Constant.EXTRA_PASSWORD_EDIT_TYPE, ActivityAccountSet.PASSWORD_EDIT_TYPE_RETRIEVE);
+            startActivity(intent);
         }
     };
 
@@ -51,7 +55,8 @@ public class ActivityUserLogin extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent();
-            intent.setClass(ActivityUserLogin.this, ActivityUserRegister.class);
+            intent.setClass(ActivityUserLogin.this, ActivityAccountSet.class);
+            intent.putExtra(Constant.EXTRA_PASSWORD_EDIT_TYPE, ActivityAccountSet.PASSWORD_EDIT_TYPE_REGISTER);
             startActivity(intent);
         }
     };
@@ -61,17 +66,27 @@ public class ActivityUserLogin extends AppCompatActivity {
         public void onClick(View v) {
             mUserId = mEditUserIdView.getText().toString();
             mPassword = mEditPasswordView.getText().toString();
-            setLoadingStatus();
-
-            Intent intent = new Intent();
-            intent.setClass(ActivityUserLogin.this, ActivityTabs.class);
-            startActivity(intent);
+            if (mUserId.equals("")) {
+                Snackbar.make(mLoginBtn,R.string.login_user_id_not_empty, Snackbar.LENGTH_LONG).show();
+                return;
+            } else if (mPassword.equals("")) {
+                Snackbar.make(mLoginBtn,R.string.login_password_not_empty, Snackbar.LENGTH_LONG).show();
+                return;
+            } else {
+                PreferenceUtils.setStringPref(Constant.USER_ID, mUserId);
+                setLoadingStatus();
+                // TODO: 2016/10/12  
+                Intent intent = new Intent();
+                intent.setClass(ActivityUserLogin.this, ActivityTabs.class);
+                startActivity(intent);
+            }
+           
         }
     };
 
     private void initView() {
         mEditUserIdView = (EditText) findViewById(R.id.edit_userid_view);
-        mEditPasswordView = (EditText) findViewById(R.id.edit_password_view);
+        mEditPasswordView = (EditText) findViewById(R.id.edit_title_view);
         mForgetPasswordView = (TextView) findViewById(R.id.forget_password_view);
         mRegisterView = (TextView) findViewById(R.id.register_view);
         mLoginBtn = (Button) findViewById(R.id.login_button);
@@ -90,15 +105,13 @@ public class ActivityUserLogin extends AppCompatActivity {
         mLoginFromView.setVisibility(View.GONE);
     }
 
-    //        mImageView = (ImageView) findViewById(R.id.image_view);
-//        mImageView2 = (ImageView) findViewById(R.id.image_view2);
-//        Glide.with(this)
-//                .load(url)
-//                .placeholder(R.mipmap.ic_launcher)
-//                .into(mImageView);
-//
-//        Glide.with(this)
-//                .load(url2)
-//                .placeholder(R.mipmap.ic_launcher)
-//                .into(mImageView2);
+    private void checkLogin() {
+        String userId = PreferenceUtils.getStringPref(Constant.USER_ID, "");
+        if (!userId.equals("")) {
+            Intent intent = new Intent();
+            intent.setClass(ActivityUserLogin.this, ActivityTabs.class);
+            startActivity(intent);
+        }
+    }
+    
 }

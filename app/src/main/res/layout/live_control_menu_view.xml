@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/trigon_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_alignRight="@+id/menu_contain_view"
+        android:scaleType="center"
+        android:src="@drawable/live_popup_menu_trigon_icon"/>
+
+    <LinearLayout
+        android:id="@+id/menu_contain_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/half_design_view_size"
+        android:layout_below="@id/trigon_view"
+        android:orientation="vertical"
+        android:background="@drawable/live_popup_menu_bg">
+
+        <RelativeLayout
+            android:id="@+id/menu_change_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_design_view_size"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/change_camera_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/two_design_view_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/live_change_camera_black_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_design_view_size"
+                android:layout_marginRight="@dimen/two_design_view_size"
+                android:layout_toRightOf="@+id/change_camera_icon_view"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_text2"
+                android:text="@string/live_menu_change_camera"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:background="@color/color_primary_gary_dark"/>
+
+        <RelativeLayout
+            android:id="@+id/menu_pause_and_resume"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_design_view_size"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/pause_and_resume_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/two_design_view_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/live_pause_black_icon"/>
+
+            <TextView
+                android:id="@+id/pause_and_resume_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_design_view_size"
+                android:layout_marginRight="@dimen/two_design_view_size"
+                android:layout_toRightOf="@+id/pause_and_resume_icon_view"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_text2"
+                android:text="@string/live_menu_pause"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:background="@color/color_primary_gary_dark"/>
+
+        <RelativeLayout
+            android:id="@+id/menu_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_design_view_size"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/finish_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/two_design_view_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/live_finish_black_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_design_view_size"
+                android:layout_marginRight="@dimen/two_design_view_size"
+                android:layout_toRightOf="@+id/finish_icon_view"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_text2"
+                android:text="@string/live_menu_finish"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

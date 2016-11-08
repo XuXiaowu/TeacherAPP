@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/one_design_view_size"
+    android:layout_marginRight="@dimen/one_design_view_size"
+    android:layout_marginTop="@dimen/one_design_view_size">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.lichen.teacher.view.CircleImageView
+            android:id="@+id/user_head_view"
+            android:layout_width="@dimen/four_design_view_size"
+            android:layout_height="@dimen/four_design_view_size"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:src="@mipmap/test_miku" />
+
+        <TextView
+            android:id="@+id/user_name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:layout_toRightOf="@+id/user_head_view"
+            android:text="用户名"
+            android:textColor="@color/color_primary" />
+
+        <TextView
+            android:id="@+id/replay_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_design_view_size"
+            android:layout_alignParentRight="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/one_design_view_size"
+            android:text="@string/chat_replay"
+            android:textColor="@color/color_primary" />
+
+        <RelativeLayout
+            android:id="@+id/like_contain_view"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_design_view_size"
+            android:layout_toLeftOf="@+id/replay_status_view"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/like_status_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/like_red_icon" />
+
+            <TextView
+                android:id="@+id/like_count_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_design_view_size"
+                android:layout_marginRight="@dimen/one_design_view_size"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/like_status_view"
+                android:text="99" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/user_name_view"
+            android:layout_below="@+id/user_name_view"
+            android:layout_marginTop="@dimen/half_design_view_size"
+            android:text="2016.11.11 15:15"
+            android:textColor="@color/color_text3"
+            android:textSize="@dimen/middle_text_size" />
+
+        <com.lichen.teacher.view.ShrinkTextView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/user_head_view"
+            android:layout_marginBottom="@dimen/one_design_view_size"
+            android:layout_below="@+id/user_head_view"
+            android:layout_marginRight="@dimen/one_design_view_size"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:maxLines="3"
+            android:text="标题飞洒发生法萨芬撒飞洒发沙发沙发沙发标题飞洒发生法萨芬撒飞洒发沙发沙发沙发"
+            android:textColor="@color/color_text1" />
+
+        <RelativeLayout
+            android:id="@+id/replay_contain_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content_view"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:layout_marginRight="@dimen/one_design_view_size"
+                android:background="@color/color_primary_gary_dark"/>
+
+            <TextView
+                android:id="@+id/replay_title_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_design_view_size"
+                android:layout_marginLeft="@dimen/one_design_view_size"
+                android:textColor="@color/color_text3"
+                android:textSize="@dimen/middle_text_size"
+                android:text="@string/chat_teacher_replay"/>
+
+            <TextView
+                android:id="@+id/replay_content_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/replay_title_view"
+                android:layout_alignLeft="@+id/replay_title_view"
+                android:layout_marginRight="@dimen/one_design_view_size"
+                android:layout_marginTop="@dimen/one_design_view_size"
+                android:textColor="@color/color_text1"
+                android:text="标题飞洒发生法萨芬撒飞洒发沙发沙发沙发标题飞洒发生法萨芬撒飞洒发沙发沙发沙发"/>
+
+            <TextView
+                android:id="@+id/replay_delete_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/one_design_view_size"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/replay_content_view"
+                android:textColor="@color/color_red"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/chat_teacher_replay_delete"/>
+
+            <TextView
+                android:id="@+id/replay_modify_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/one_design_view_size"
+                android:layout_below="@+id/replay_content_view"
+                android:layout_toLeftOf="@+id/replay_delete_view"
+                android:textColor="@color/color_primary"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/chat_teacher_replay_modify"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

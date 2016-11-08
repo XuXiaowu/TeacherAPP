@@ -1114,4 +1114,36 @@ public class FileUtils {
         if (lastPoi == -1 || lastSep >= lastPoi) return "";
         return filePath.substring(lastPoi);
     }
+
+    // 判断文件MimeType的method
+    public static String getMIMEType(File f) {
+        String type = "";
+        String fName = f.getName();
+        // 取得扩展名
+        String end = fName
+                .substring(fName.lastIndexOf(".") + 1, fName.length())
+                .toLowerCase();
+
+        // 按扩展名的类型决定MimeType
+        if (end.equals("m4a") || end.equals("mp3") || end.equals("mid")
+                || end.equals("xmf") || end.equals("ogg") || end.equals("wav")) {
+            type = "audio";
+        } else if (end.equals("3gp") || end.equals("mp4")) {
+            type = "video";
+        } else if (end.equals("jpg") || end.equals("gif") || end.equals("png")
+                || end.equals("jpeg") || end.equals("bmp")) {
+            type = "image";
+        } else if (end.equals("apk")) {
+            // android.permission.INSTALL_PACKAGES
+            type = "application/vnd.android.package-archive";
+        } else {
+            type = "*";
+        }
+        // 如果无法直接打开，就跳出软件清单给使用者选择
+        if (!end.equals("apk")) {
+            type += "/*";
+        }
+
+        return type;
+    }
 }

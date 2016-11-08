@@ -10,11 +10,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.lichen.teacher.R;
+import com.lichen.teacher.global.Constant;
+import com.lichen.teacher.models.LiveParcelable;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,16 +39,23 @@ public class ActivityLiveRequest extends AppCompatActivity {
     private static final int REQUEST_CODE_PHOTO_PREVIEW = 2;
 
     private ImageView mBackView;
-    private TextView mCreateView;
+    private TextView mTitleView;
+    private TextView mRightBtn;
     private TextView mDateView;
     private TextView mStartTimeView;
     private TextView mEndTimeView;
     private BGASortableNinePhotoLayout mAddPhotoView;
+    private EditText mTitleEditView;
+    private EditText mPriceEditView;
+    private EditText mTypeEditView;
+    private EditText mSummaryEditView;
 
     private int mStartHour;
     private int mStartMinute;
     private int mEndHour;
     private int mEndMinute;
+
+    private LiveParcelable mLive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +64,8 @@ public class ActivityLiveRequest extends AppCompatActivity {
 
         initView();
         setViewListener();
+        getExtraData();
+        setExtraData();
     }
 
     @Override
@@ -157,17 +169,22 @@ public class ActivityLiveRequest extends AppCompatActivity {
 
     private void initView() {
         mBackView = (ImageView) findViewById(R.id.back_view);
-        mCreateView = (TextView) findViewById(R.id.create_view);
+        mTitleView = (TextView) findViewById(R.id.activity_title_view);
+        mRightBtn = (TextView) findViewById(R.id.right_btn);
         mDateView = (TextView) findViewById(R.id.date_view);
         mStartTimeView = (TextView) findViewById(R.id.start_time_view);
         mEndTimeView = (TextView) findViewById(R.id.end_time_view);
+        mTitleEditView = (EditText) findViewById(R.id.edit_title_view);
+        mPriceEditView = (EditText) findViewById(R.id.edit_price_view);
+        mTypeEditView = (EditText) findViewById(R.id.edit_type_view);
+        mSummaryEditView = (EditText) findViewById(R.id.edit_summary_view) ;
         mAddPhotoView = (BGASortableNinePhotoLayout) findViewById(R.id.add_photo_view);
         mAddPhotoView.init(this);
     }
 
     private void setViewListener() {
         mBackView.setOnClickListener(mBackViewClickListener);
-        mCreateView.setOnClickListener(mCreateViewClickListener);
+        mRightBtn.setOnClickListener(mCreateViewClickListener);
         mDateView.setOnClickListener(mDateViewClickListener);
         mStartTimeView.setOnClickListener(mStartTimeViewClickListener);
         mEndTimeView.setOnClickListener(mEndTimeViewClickListener);
@@ -196,6 +213,28 @@ public class ActivityLiveRequest extends AppCompatActivity {
         else {
             if (mStartMinute >= mEndMinute) return false;
             else return true;
+        }
+    }
+
+    private void getExtraData() {
+        Intent intent = getIntent();
+        mLive = intent.getParcelableExtra(Constant.EXTRA_LIVE_INFO);
+    }
+
+    private void setExtraData() {
+        if (mLive != null) {
+            mTitleView.setText(R.string.live_request_edit_title);
+            mRightBtn.setText(R.string.confirm);
+            mTitleEditView.setText(mLive.getTitle());
+            mDateView.setText(mLive.getDate());
+            mStartTimeView.setText(mLive.getStartTime());
+            mEndTimeView.setText(mLive.getEndTime());
+            mTypeEditView.setText(mLive.getType());
+            mPriceEditView.setText(String.valueOf(mLive.getPrice()));
+            mSummaryEditView.setText(mLive.getSummary());
+            ArrayList list = new ArrayList();
+            list.add(mLive.getImageUrl());
+            mAddPhotoView.setData(list);
         }
     }
 

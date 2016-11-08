@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lichen.teacher.apps.ActivityFeedback"
+    android:background="@color/color_primary_gary">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_primary">
+
+            <ImageView
+                android:id="@+id/back_view"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:src="@drawable/left_arrow_white"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/more_feedback"
+                android:textSize="@dimen/bigger_text_size"
+                android:textColor="@color/color_white"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/logo_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_design_view_size"
+        android:layout_below="@+id/title_bar_view"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/user_login_logo"/>
+
+    <EditText
+        android:id="@+id/edit_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="@dimen/one_design_view_size"
+        android:layout_marginTop="@dimen/two_design_view_size"
+        android:layout_marginLeft="@dimen/four_design_view_size"
+        android:layout_marginRight="@dimen/four_design_view_size"
+        android:layout_below="@+id/logo_view"
+        android:hint="@string/feedback_edit_hint"
+        android:gravity="top"
+        android:textSize="@dimen/middle_text_size"
+        android:background="@drawable/feedback_edit_bg"/>
+
+
+    <Button
+        android:id="@+id/submit_btn"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="@dimen/four_design_view_size"
+        android:layout_marginRight="@dimen/four_design_view_size"
+        android:layout_below="@+id/edit_view"
+        android:text="@string/feedback_submit"
+        android:textStyle="bold"
+        android:textColor="@drawable/hollow_blue_btn_text_selector"
+        android:background="@drawable/hollow_blue_btn_selector"/>
+
+    <TextView
+        android:id="@+id/version_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/three_design_view_size"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/app_name"/>
+
+
+    <LinearLayout
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/one_design_view_size"
+            android:layout_marginLeft="@dimen/one_design_view_size"
+            android:layout_marginTop="@dimen/one_design_view_size"
+            android:gravity="center"
+            android:text="@string/feedback_content_uploading"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

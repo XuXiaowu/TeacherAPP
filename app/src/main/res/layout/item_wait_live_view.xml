@@ -5,62 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.lichen.teacher.view.TouchableImageView
-        android:id="@+id/cover_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_heightPercent="55%w"
-        android:scaleType="fitXY"
-        android:src="@drawable/testtesttesttesttesttesttesttesttest"/>
+    <!--<com.lichen.teacher.view.TouchableImageView-->
+        <!--android:id="@+id/cover_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_heightPercent="55%w"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@drawable/testtesttesttesttesttesttesttesttest"/>-->
 
-    <TextView
-        android:id="@+id/title_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/one_design_view_size"
-        android:layout_marginLeft="@dimen/one_design_view_size"
-        android:layout_alignBottom="@+id/cover_view"
-        android:textColor="@color/color_white"
-        android:shadowColor="@color/color_text1"
-        android:shadowRadius="10"
-        android:text="会计实务全能班"/>
+    <!--<TextView-->
+        <!--android:id="@+id/activity_title_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/one_design_view_size"-->
+        <!--android:layout_marginLeft="@dimen/one_design_view_size"-->
+        <!--android:layout_alignBottom="@+id/cover_view"-->
+        <!--android:textColor="@color/color_white"-->
+        <!--android:shadowColor="@color/color_text1"-->
+        <!--android:shadowRadius="10"-->
+        <!--android:text="会计实务全能班"/>-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/one_design_view_size"
-        android:layout_alignParentRight="true"
-        android:layout_alignBottom="@+id/title_view"
-        android:textColor="@color/color_white"
-        android:shadowColor="@color/color_text1"
-        android:shadowRadius="10"
-        android:text="888人上课"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="@dimen/one_design_view_size"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignBottom="@+id/activity_title_view"-->
+        <!--android:textColor="@color/color_white"-->
+        <!--android:shadowColor="@color/color_text1"-->
+        <!--android:shadowRadius="10"-->
+        <!--android:text="888人上课"/>-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/four_design_view_size"
-        android:layout_below="@+id/cover_view">
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/four_design_view_size"-->
+        <!--android:layout_below="@+id/cover_view">-->
 
-        <TextView
-            android:id="@+id/user_name_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/view_padding_size"
-            android:layout_toRightOf="@+id/user_cover_view"
-            android:layout_centerVertical="true"
-            android:textColor="@color/color_red"
-            android:text="收益:¥888.0"/>
+        <!--<TextView-->
+            <!--android:id="@+id/user_name_view"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/view_padding_size"-->
+            <!--android:layout_toRightOf="@+id/user_cover_view"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:textColor="@color/color_red"-->
+            <!--android:text="收益:¥888.0"/>-->
 
-        <TextView
-            android:id="@+id/price_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/one_design_view_size"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:textColor="@color/color_text1"
-            android:text="2016-16-16"/>
+        <!--<TextView-->
+            <!--android:id="@+id/price_edit_view"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/one_design_view_size"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:textColor="@color/color_text1"-->
+            <!--android:text="2016-16-16"/>-->
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
 </com.zhy.android.percent.support.PercentRelativeLayout>

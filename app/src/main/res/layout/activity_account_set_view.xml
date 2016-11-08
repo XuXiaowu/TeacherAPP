@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".apps.ActivityAccountSet">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_primary">
+
+            <ImageView
+                android:id="@+id/back_view"
+                android:layout_width="@dimen/five_design_view_size"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+            <TextView
+                android:id="@+id/title_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/user_edit_change_password"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/bigger_text_size" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <EditText
+        android:id="@+id/edit_phone_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:layout_marginTop="@dimen/two_design_view_size"
+        android:hint="@string/password_edit_prompt_phone"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textSize="@dimen/none_text_size"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_identifying_code_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/get_identifying_code_btn"
+                android:layout_alignParentBottom="true"
+                android:hint="@string/password_edit_prompt_identifying_code"
+                android:imeActionId="@+id/login"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/none_text_size"/>
+
+
+        <Button
+            android:id="@+id/get_identifying_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/blue_btn_selector"
+            android:textColor="@color/color_white"
+            android:text="@string/get_identifying_code"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edit_password_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:hint="@string/password_edit_prompt_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textSize="@dimen/none_text_size"/>
+
+
+    <EditText
+        android:id="@+id/edit_confirm_password_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_design_view_size"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:hint="@string/password_edit_prompt_confirm_password"
+        android:imeActionId="@+id/login"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textSize="@dimen/none_text_size"/>
+
+
+    <Button
+        android:id="@+id/submit_btn"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_padding_size"
+        android:layout_marginRight="@dimen/view_padding_size"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/hollow_blue_btn_selector"
+        android:text="@string/password_edit_submit"
+        android:textColor="@drawable/hollow_blue_btn_text_selector"
+        android:textStyle="bold" />
+
+</LinearLayout>

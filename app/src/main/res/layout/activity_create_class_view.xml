@@ -35,7 +35,7 @@
 
 
             <TextView
-                android:id="@+id/create_view"
+                android:id="@+id/right_btn"
                 android:layout_width="@dimen/five_design_view_size"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
@@ -57,7 +57,7 @@
         android:background="?android:attr/selectableItemBackground">
 
         <TextView
-            android:id="@+id/title_view"
+            android:id="@+id/activity_title_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -67,13 +67,13 @@
             android:textSize="@dimen/none_text_size" />
 
         <AutoCompleteTextView
-            android:id="@+id/edit_password_view"
+            android:id="@+id/edit_title_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/view_padding_size"
             android:layout_marginRight="@dimen/view_padding_size"
-            android:layout_toRightOf="@+id/title_view"
+            android:layout_toRightOf="@+id/activity_title_view"
             android:background="@android:color/transparent"
             android:hint="@string/live_request_title_hint"
             android:maxLines="1"
@@ -143,7 +143,7 @@
             android:textSize="@dimen/none_text_size" />
 
         <EditText
-            android:id="@+id/summary_view"
+            android:id="@+id/edit_summary_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/view_padding_size"

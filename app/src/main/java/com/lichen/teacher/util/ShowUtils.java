@@ -8,9 +8,12 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.lichen.teacher.R;
 
 
 public class ShowUtils {
@@ -34,39 +37,39 @@ public class ShowUtils {
 
 
 
-//	public static void showDilog(Context context, int titleId, int messageId,
-//								 DialogInterface.OnClickListener okButtonClickListener,
-//								 DialogInterface.OnClickListener cancelButtonClickListener) {
-//		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//		builder.setTitle(titleId);
-//		builder.setMessage(messageId);
-//		builder.setPositiveButton(R.string.sure, okButtonClickListener);
-//		builder.setNegativeButton(R.string.cancel, cancelButtonClickListener);
-////		mDialog.setCancelable(false);
-//		builder.show();
-//	}
-//
-//	public static void showDilog(Context context, String title, String message,
-//								 DialogInterface.OnClickListener okButtonClickListener,
-//								 DialogInterface.OnClickListener cancelButtonClickListener) {
-//		if (mDialog == null) mDialog = new AlertDialog.Builder(context);
-//		mDialog.setTitle(title);
-//		mDialog.setMessage(message);
-//		mDialog.setPositiveButton(R.string.sure, okButtonClickListener);
-//		mDialog.setNegativeButton(R.string.cancel, cancelButtonClickListener);
+	public static void showDialog(Context context, int titleId, int messageId,
+								 DialogInterface.OnClickListener okButtonClickListener,
+								 DialogInterface.OnClickListener cancelButtonClickListener) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setTitle(titleId);
+		builder.setMessage(messageId);
+		builder.setPositiveButton(R.string.sure, okButtonClickListener);
+		builder.setNegativeButton(R.string.cancel, cancelButtonClickListener);
 //		mDialog.setCancelable(false);
-//		mDialog.show();
-//	}
-//
-//	public static void showUpdateDilog(Context context, String message,
-//								 DialogInterface.OnClickListener okButtonClickListener) {
-//
-//		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//		builder.setTitle(R.string.find_new_version);
-//		builder.setMessage(message);
-//		builder.setPositiveButton(R.string.now_update, okButtonClickListener);
-//		builder.setNegativeButton(R.string.next_update, null);
-//		builder.setCancelable(false);
-//		builder.show();
-//	}
+		builder.show();
+	}
+
+	public static void showUpdateVersioniDialog(Context context, String message,
+								 DialogInterface.OnClickListener okButtonClickListener) {
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setTitle(R.string.find_new_version);
+		builder.setMessage(message);
+		builder.setPositiveButton(R.string.now_update, okButtonClickListener);
+		builder.setNegativeButton(R.string.next_update, null);
+		builder.setCancelable(false);
+		builder.show();
+	}
+
+	public static int getScreenWidth(Context context) {
+		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+		int width = wm.getDefaultDisplay().getWidth();
+		return width;
+	}
+
+	public static int getScreenHeight(Context context) {
+		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+		int height = wm.getDefaultDisplay().getHeight();
+		return height;
+	}
 }

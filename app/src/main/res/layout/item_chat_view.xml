@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/cover_view"
+        android:layout_width="@dimen/six_design_view_size"
+        android:layout_height="@dimen/six_design_view_size"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/test_miku"/>
+
+    <ImageView
+        android:id="@+id/new_mark_view"
+        android:layout_width="@dimen/one_design_view_size"
+        android:layout_height="@dimen/one_design_view_size"
+        android:layout_marginLeft="@dimen/sixty_five_design_view_size"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:background="@drawable/red_circle_bg"/>
+
+    <TextView
+        android:id="@id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_toRightOf="@+id/cover_view"
+        android:textColor="@color/color_text1"
+        android:text="标题标题标题标题标题标题标题标题"/>
+
+    <TextView
+        android:id="@id/teacher_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_below="@+id/title_view"
+        android:layout_toRightOf="@+id/cover_view"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/color_text1"
+        android:text="班主任:名称"/>
+
+    <TextView
+        android:id="@+id/summary_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_design_view_size"
+        android:layout_marginLeft="@dimen/one_design_view_size"
+        android:layout_marginRight="@dimen/one_design_view_size"
+        android:layout_toRightOf="@+id/cover_view"
+        android:layout_below="@id/teacher_view"
+        android:lines="2"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/color_text3"
+        android:text="简介简介简介简介简介简介简介简介简介简介简简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介介简介"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/one_design_view_size"
+        android:layout_below="@+id/cover_view"
+        android:background="@color/color_primary_gary_dark" />
+
+</RelativeLayout>

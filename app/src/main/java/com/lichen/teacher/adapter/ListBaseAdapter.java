@@ -54,6 +54,13 @@ public class ListBaseAdapter<T extends Object> extends RecyclerView.Adapter {
         }
     }
 
+    public void addItem(T item) {
+        int lastIndex = this.mDataList.size();
+        if (this.mDataList.add(item)) {
+            notifyItemInserted(lastIndex);
+        }
+    }
+
     public void clear() {
         mDataList.clear();
         notifyDataSetChanged();
